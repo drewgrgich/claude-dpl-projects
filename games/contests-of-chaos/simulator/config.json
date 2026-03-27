@@ -1,0 +1,58 @@
+{
+  "game_rules": {
+    "victory_threshold": {
+      "2_player": 25,
+      "3_player": 30,
+      "4_player": 30
+    },
+    "starting_shinies": {
+      "2_player": [3, 4],
+      "3_player": [3, 4, 4],
+      "4_player": [3, 4, 4, 5]
+    },
+    "hand_limit": 8,
+    "starting_deal": 5,
+    "starting_keep": 3,
+    "lineup_size": 4,
+    "jumbotron_size": 4,
+    "slot_pricing": [0, 1, 2, 3],
+    "scramble_cost": {
+      "2_player": 1,
+      "3_player": 2,
+      "4_player": 2
+    },
+    "timeout_shiny_gain": 1,
+    "timeout_max_discards": 2,
+    "timeout_can_flush_jumbotron_slot1": false,
+    "agent_cost": 5,
+    "agent_draw": 2,
+    "agent_keep": 1,
+    "playbook_limit": 2,
+    "shiny_bonus_rate": 3,
+    "shiny_bonus_max": 3,
+    "wipe_jumbotron": {
+      "enabled": true,
+      "cost": 5,
+      "min_hand_size": 5,
+      "post_wipe_event_cost": 2,
+      "is_separate_action": true,
+      "description": "Pay cost to discard all Jumbotron events to bottom of Event Deck and deal 4 new ones. Must have min_hand_size cards in hand. Completing an event same turn costs post_wipe_event_cost extra Shinies."
+    },
+    "coachs_toll": {
+      "enabled_2p": true,
+      "shiny_on_slot1": 1
+    }
+  },
+  "factions": {
+    "RED": "Super-Dupes",
+    "ORG": "Finders-Keepers",
+    "YLW": "Tinkerers",
+    "GRN": "Prognosticationers",
+    "BLU": "Magicians",
+    "PUR": "Time Travelers"
+  },
+  "free_agent_ranks": [0, 10],
+  "signed_ranks": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "cards_per_faction": 11,
+  "rank_range": [0, 10]
+}

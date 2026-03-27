@@ -1,0 +1,89 @@
+{
+  "num_games": 500,
+  "num_players": 4,
+  "decided_games": 500,
+  "timed_out": 0,
+  "timeout_rate": 0.0,
+  "avg_turns": 48.266,
+  "median_turns": 36.0,
+  "stdev_turns": 28.82688367557079,
+  "min_turns": 12,
+  "max_turns": 121,
+  "turns_p10": 22,
+  "turns_p90": 100,
+  "win_rates": {
+    "0": 0.208,
+    "1": 0.258,
+    "2": 0.254,
+    "3": 0.28
+  },
+  "first_player_advantage": 0.208,
+  "first_player_expected": 0.25,
+  "sugar_crash_rate": 0.136,
+  "avg_sugar_crash_turn": 95.51470588235294,
+  "avg_scavenges_per_game": 15.372,
+  "avg_mercy_saves_per_game": 7.21,
+  "mercy_rate": 0.4690346083788707,
+  "avg_penalty_draw": 1.9012239639252737,
+  "max_penalty_draw": 10,
+  "penalty_distribution": {
+    "0": 451,
+    "1": 1916,
+    "2": 1078,
+    "3": 611,
+    "4": 297,
+    "5": 156,
+    "6": 87,
+    "7": 36,
+    "8": 19,
+    "9": 5,
+    "10": 1
+  },
+  "power_totals": {
+    "RED": 1883,
+    "ORANGE": 1783,
+    "YELLOW": 1883,
+    "GREEN": 1921,
+    "BLUE": 1882,
+    "PURPLE": 2436
+  },
+  "power_per_game": {
+    "RED": 3.766,
+    "ORANGE": 3.566,
+    "YELLOW": 3.766,
+    "GREEN": 3.842,
+    "BLUE": 3.764,
+    "PURPLE": 4.872
+  },
+  "per_player": {
+    "0": {
+      "avg_cards_played": 9.504,
+      "avg_cards_drawn": 7.062,
+      "avg_scavenges": 3.99,
+      "avg_max_hand": 6.446,
+      "avg_final_hand": 2.74
+    },
+    "1": {
+      "avg_cards_played": 9.37,
+      "avg_cards_drawn": 6.88,
+      "avg_scavenges": 3.896,
+      "avg_max_hand": 6.342,
+      "avg_final_hand": 2.462
+    },
+    "2": {
+      "avg_cards_played": 8.912,
+      "avg_cards_drawn": 6.798,
+      "avg_scavenges": 3.774,
+      "avg_max_hand": 6.282,
+      "avg_final_hand": 2.586
+    },
+    "3": {
+      "avg_cards_played": 8.57,
+      "avg_cards_drawn": 6.282,
+      "avg_scavenges": 3.712,
+      "avg_max_hand": 6.288,
+      "avg_final_hand": 2.532
+    }
+  },
+  "reshuffles_per_game": 0.458
+}

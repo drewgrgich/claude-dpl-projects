@@ -1,0 +1,87 @@
+{
+  "game_rules": {
+    "num_players": 2,
+    "rounds": 3,
+    "turns_per_round_per_player": 6,
+    "cards_per_hand": 6,
+    "arenas": ["Left", "Center", "Right"],
+    "arena_roar_threshold": 5,
+    "chameleon_ranks": [0, 10],
+    "max_chameleons_per_round": 2,
+    "max_fumbles_per_round": 2,
+    "max_signature_moves_per_turn": 1,
+    "momentum_threshold": 2,
+    "momentum_vp": 1,
+    "arena_win_vp": 1,
+    "center_arena_bonus_vp": 1,
+    "tiebreaker_target_rank": 15
+  },
+  "factions": {
+    "RED": {
+      "name": "Super-Dupes",
+      "personality": "bodyguard",
+      "personality_bonus": 1,
+      "bodyguard_min_monsters": 2,
+      "signature": "heroic_intervention",
+      "signature_limit": "per_round"
+    },
+    "ORANGE": {
+      "name": "Finders-Keepers",
+      "personality": "dibs_mine",
+      "personality_bonus": 1,
+      "signature": "the_big_borrow",
+      "signature_limit": "per_game",
+      "borrow_max_loss_margin": 3,
+      "borrow_rank_range": [1, 5],
+      "trophy_vp": 1
+    },
+    "YELLOW": {
+      "name": "Tinkerers",
+      "personality": "fast_start",
+      "personality_bonus": 1,
+      "fast_start_count": 2,
+      "signature": "double_install",
+      "signature_limit": "per_round"
+    },
+    "GREEN": {
+      "name": "Prognosticationers",
+      "personality": "i_knew_that",
+      "signature": "scheduled_outcome",
+      "signature_limit": "per_round",
+      "scheduled_draw": 2,
+      "scheduled_keep": 1
+    },
+    "BLUE": {
+      "name": "Magicians",
+      "personality": "misdirection",
+      "signature": "is_this_your_card",
+      "signature_limit": "per_round",
+      "swap_rank_range": 3
+    },
+    "PURPLE": {
+      "name": "Time Travelers",
+      "personality": "time_capsule",
+      "time_capsule_keep": 2,
+      "signature": "rewind",
+      "signature_limit": "per_round",
+      "rewind_rank_range": [1, 6]
+    }
+  },
+  "deck": {
+    "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+    "rank_min": 0,
+    "rank_max": 10,
+    "cards_per_faction": 11
+  },
+  "faction_draft": {
+    "factions_to_reveal": 5,
+    "factions_per_player": 2,
+    "snake_draft_order": [0, 1, 1, 0]
+  },
+  "optional_modes": {
+    "pop_bonus": false,
+    "pop_bonus_value": 2,
+    "high_dopamine": false,
+    "pop_tax": false
+  }
+}

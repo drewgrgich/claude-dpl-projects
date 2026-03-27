@@ -1,0 +1,100 @@
+{
+  "num_games": 500,
+  "num_players": 4,
+  "win_rates": {
+    "0": 0.302,
+    "1": 0.282,
+    "2": 0.238,
+    "3": 0.178
+  },
+  "avg_turns": 37.9,
+  "min_turns": 22,
+  "max_turns": 56,
+  "median_turns": 38,
+  "turn_limit_rate": 0.0,
+  "halftime_rate": 1.0,
+  "avg_halftime_turn": 25.06,
+  "per_player": {
+    "0": {
+      "avg_final_score": 42.206,
+      "avg_banked_score": 53.264,
+      "avg_hand_penalty": 11.058,
+      "avg_hand_size_end": 3.192,
+      "avg_wilds_in_hand": 0.0,
+      "avg_sets_count": 2.59,
+      "score_min": -10,
+      "score_max": 177
+    },
+    "1": {
+      "avg_final_score": 41.262,
+      "avg_banked_score": 52.688,
+      "avg_hand_penalty": 11.426,
+      "avg_hand_size_end": 3.216,
+      "avg_wilds_in_hand": 0.002,
+      "avg_sets_count": 2.606,
+      "score_min": -26,
+      "score_max": 136
+    },
+    "2": {
+      "avg_final_score": 37.624,
+      "avg_banked_score": 48.882,
+      "avg_hand_penalty": 11.258,
+      "avg_hand_size_end": 3.28,
+      "avg_wilds_in_hand": 0.0,
+      "avg_sets_count": 2.348,
+      "score_min": -23,
+      "score_max": 116
+    },
+    "3": {
+      "avg_final_score": 35.294,
+      "avg_banked_score": 46.318,
+      "avg_hand_penalty": 11.024,
+      "avg_hand_size_end": 3.232,
+      "avg_wilds_in_hand": 0.0,
+      "avg_sets_count": 2.31,
+      "score_min": -18,
+      "score_max": 135
+    }
+  },
+  "faction_powers": {
+    "RED": 337,
+    "ORANGE": 1523,
+    "YELLOW": 620,
+    "GREEN": 385,
+    "BLUE": 923,
+    "PURPLE": 1139
+  },
+  "faction_powers_per_game": {
+    "RED": 0.674,
+    "ORANGE": 3.046,
+    "YELLOW": 1.24,
+    "GREEN": 0.77,
+    "BLUE": 1.846,
+    "PURPLE": 2.278
+  },
+  "action_totals": {
+    "draw_litter_box": 419,
+    "bank": 4927,
+    "discard": 18807,
+    "draw_feeder": 13777,
+    "extend": 4391,
+    "snack_floor": 5254,
+    "yellow_extend": 181
+  },
+  "action_per_game": {
+    "draw_litter_box": 0.838,
+    "bank": 9.854,
+    "discard": 37.614,
+    "draw_feeder": 27.554,
+    "extend": 8.782,
+    "snack_floor": 10.508,
+    "yellow_extend": 0.362
+  },
+  "wilds_banked_per_game": 8.956,
+  "wilds_discarded_per_game": 0.0,
+  "poison_peanuts_per_game": 0.2,
+  "avg_max_stagnation": 5.584,
+  "stagnation_5_plus_rate": 0.614,
+  "snack_floor_per_game": 10.508,
+  "mid_bite_whistle_rate": 0.288
+}

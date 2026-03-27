@@ -1,0 +1,184 @@
+[
+  {
+    "label": "3p-baseline",
+    "num_games": 500,
+    "num_players": 3,
+    "avg_turns": 22.108,
+    "turn_range": "15-27",
+    "completion_rate": 0.776,
+    "bust_rate": 0.5640703517587939,
+    "avg_busts_per_game": 2.694,
+    "seat_imbalance": 0.24200000000000002,
+    "seat_rates": {
+      "0": 0.456,
+      "1": 0.33,
+      "2": 0.214
+    },
+    "avg_winner_score": 18.07,
+    "avg_player_score": 12.247333333333334,
+    "avg_score_spread": 12.054,
+    "avg_exposures": 2.354,
+    "faction_win_rates": {
+      "RED": 0.132,
+      "ORANGE": 0.124,
+      "YELLOW": 0.208,
+      "GREEN": 0.164,
+      "BLUE": 0.212,
+      "PURPLE": 0.16
+    },
+    "avg_faction_scores": {
+      "RED": 5.062,
+      "ORANGE": 3.92,
+      "YELLOW": 3.536,
+      "GREEN": 2.878,
+      "BLUE": 3.804,
+      "PURPLE": 3.632
+    }
+  },
+  {
+    "label": "3p-4rooms",
+    "num_games": 500,
+    "num_players": 3,
+    "avg_turns": 14.956,
+    "turn_range": "12-21",
+    "completion_rate": 1.0,
+    "bust_rate": 0.563,
+    "avg_busts_per_game": 2.252,
+    "seat_imbalance": 0.34400000000000003,
+    "seat_rates": {
+      "0": 0.522,
+      "1": 0.3,
+      "2": 0.178
+    },
+    "avg_winner_score": 13.758,
+    "avg_player_score": 8.554666666666666,
+    "avg_score_spread": 10.97,
+    "avg_exposures": 2.124,
+    "faction_win_rates": {
+      "RED": 0.176,
+      "ORANGE": 0.17,
+      "YELLOW": 0.174,
+      "GREEN": 0.13,
+      "BLUE": 0.168,
+      "PURPLE": 0.182
+    },
+    "avg_faction_scores": {
+      "RED": 5.146,
+      "ORANGE": 2.628,
+      "YELLOW": 2.542,
+      "GREEN": 1.96,
+      "BLUE": 2.61,
+      "PURPLE": 2.468
+    }
+  },
+  {
+    "label": "4p-baseline",
+    "num_games": 500,
+    "num_players": 4,
+    "avg_turns": 24.628,
+    "turn_range": "18-35",
+    "completion_rate": 0.994,
+    "bust_rate": 0.5679012345679012,
+    "avg_busts_per_game": 3.404,
+    "seat_imbalance": 0.134,
+    "seat_rates": {
+      "0": 0.318,
+      "1": 0.254,
+      "2": 0.244,
+      "3": 0.184
+    },
+    "avg_winner_score": 20.194,
+    "avg_player_score": 12.481,
+    "avg_score_spread": 15.182,
+    "avg_exposures": 3.066,
+    "faction_win_rates": {
+      "RED": 0.174,
+      "ORANGE": 0.174,
+      "YELLOW": 0.148,
+      "GREEN": 0.158,
+      "BLUE": 0.204,
+      "PURPLE": 0.142
+    },
+    "avg_faction_scores": {
+      "RED": 6.538,
+      "ORANGE": 5.256,
+      "YELLOW": 3.4,
+      "GREEN": 4.024,
+      "BLUE": 4.556,
+      "PURPLE": 3.182
+    }
+  },
+  {
+    "label": "4p-bust-fix",
+    "num_games": 500,
+    "num_players": 4,
+    "avg_turns": 24.528,
+    "turn_range": "18-35",
+    "completion_rate": 0.994,
+    "bust_rate": 0.5902569235902569,
+    "avg_busts_per_game": 3.538,
+    "seat_imbalance": 0.18399999999999997,
+    "seat_rates": {
+      "0": 0.348,
+      "1": 0.278,
+      "2": 0.21,
+      "3": 0.164
+    },
+    "avg_winner_score": 24.418,
+    "avg_player_score": 16.834,
+    "avg_score_spread": 15.506,
+    "avg_exposures": 2.984,
+    "faction_win_rates": {
+      "RED": 0.188,
+      "ORANGE": 0.14,
+      "YELLOW": 0.18,
+      "GREEN": 0.154,
+      "BLUE": 0.16,
+      "PURPLE": 0.178
+    },
+    "avg_faction_scores": {
+      "RED": 13.608,
+      "ORANGE": 9.48,
+      "YELLOW": 8.316,
+      "GREEN": 7.754,
+      "BLUE": 7.468,
+      "PURPLE": 6.842
+    }
+  },
+  {
+    "label": "3p-both-fix",
+    "num_games": 500,
+    "num_players": 3,
+    "avg_turns": 15.028,
+    "turn_range": "12-26",
+    "completion_rate": 0.996,
+    "bust_rate": 0.5520520520520521,
+    "avg_busts_per_game": 2.206,
+    "seat_imbalance": 0.22800000000000004,
+    "seat_rates": {
+      "0": 0.466,
+      "1": 0.296,
+      "2": 0.238
+    },
+    "avg_winner_score": 18.05,
+    "avg_player_score": 12.028,
+    "avg_score_spread": 12.466,
+    "avg_exposures": 2.076,
+    "faction_win_rates": {
+      "RED": 0.164,
+      "ORANGE": 0.162,
+      "YELLOW": 0.178,
+      "GREEN": 0.148,
+      "BLUE": 0.176,
+      "PURPLE": 0.172
+    },
+    "avg_faction_scores": {
+      "RED": 8.61,
+      "ORANGE": 6.414,
+      "YELLOW": 5.152,
+      "GREEN": 5.028,
+      "BLUE": 5.416,
+      "PURPLE": 4.764
+    }
+  }
+]

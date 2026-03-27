@@ -1,0 +1,71 @@
+{
+  "num_games": 1000,
+  "mode": "round",
+  "avg_turns": 13.023,
+  "min_turns": 7,
+  "max_turns": 19,
+  "hit_turn_limit_count": 0,
+  "hit_turn_limit_rate": 0.0,
+  "avg_tricks": 12.504,
+  "min_tricks": 6,
+  "max_tricks": 18,
+  "win_rates": {
+    "0": 0.327,
+    "1": 0.344,
+    "2": 0.329
+  },
+  "avg_finish_position": {
+    "0": 2.013,
+    "1": 1.98,
+    "2": 2.007
+  },
+  "formation_usage": {
+    "confetti_cannon": {
+      "total": 575,
+      "pct": 3.2287045875680835
+    },
+    "daisy_chain": {
+      "total": 4229,
+      "pct": 23.74642034926161
+    },
+    "solo": {
+      "total": 7903,
+      "pct": 44.37643887921837
+    },
+    "surge": {
+      "total": 4324,
+      "pct": 24.279858498511988
+    },
+    "trip_up": {
+      "total": 778,
+      "pct": 4.368577685439947
+    }
+  },
+  "ability_usage": {
+    "recalibrate": 1399,
+    "reclaim": 1169,
+    "revelation": 1280,
+    "rotation": 1260,
+    "scout": 1051,
+    "streamline": 1216
+  },
+  "avg_cannons_per_game": 0.0,
+  "avg_trip_ups_per_game": 0.778,
+  "games_with_cannon": 0.0,
+  "games_with_trip_up": 56.89999999999999,
+  "avg_max_stagnation": 0.0,
+  "worst_stagnation": 0,
+  "games_with_stagnation_10plus": 0,
+  "avg_fatigue_by_position": {
+    "1": 0.0,
+    "2": 2.0,
+    "3": 4.0
+  },
+  "avg_remaining_cards_last": 2.142,
+  "max_remaining_cards_last": 15,
+  "avg_cards_played_per_player": {
+    "0": 13.563,
+    "1": 13.485427135678393,
+    "2": 13.275275275275275
+  }
+}

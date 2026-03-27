@@ -1,0 +1,39 @@
+{
+  "num_games": 500,
+  "num_players": 4,
+  "decision_density": {
+    "avg_choices": 2.2985790188977666,
+    "pct_2plus_choices": 0.8673614214625264
+  },
+  "comeback": {
+    "comeback_rate": 0.6,
+    "avg_lead_changes": 7.156,
+    "last_to_top2_rate": 0.408
+  },
+  "dead_turns": {
+    "avg_dead_rate": 0.0008116417895829661,
+    "max_dead_rate": 0.04411764705882353,
+    "pct_zero_dead": 0.966
+  },
+  "blowout": {
+    "avg_margin": 3.646,
+    "blowout_2x_rate": 0.112,
+    "close_game_rate": 0.558
+  },
+  "tension": {
+    "avg_vp_early": 4.71,
+    "avg_vp_mid": 9.78,
+    "avg_vp_late": 11.59,
+    "avg_final_third_pct": 0.44383154637943856,
+    "pct_ascending": 0.394
+  },
+  "power_fantasy": {
+    "avg_wow_per_game": 10.262,
+    "pct_games_with_wow": 1.0,
+    "avg_wow_rate": 0.21941282296135226
+  },
+  "interaction": {
+    "avg_interactions_per_game": 29.426,
+    "avg_interaction_rate": 0.6252509251369542
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "game_rules": {
+    "deck": {
+      "factions": 6,
+      "min_rank": 0,
+      "max_rank": 10,
+      "wild_ranks": [0, 10]
+    },
+    "setup": {
+      "allegiance_cards": 1,
+      "deal_size": 7,
+      "keep_size": 5,
+      "discard_per_player": 2
+    },
+    "locker_rooms": {
+      "count_formula": "players + 2",
+      "3_player": 5,
+      "4_player": 6,
+      "5_player": 7,
+      "capacity": 3
+    },
+    "accusations": {
+      "tokens_per_player": 2,
+      "correct_bonus": 5,
+      "incorrect_penalty": -2
+    },
+    "scoring": {
+      "method": "faction_rank_sum",
+      "tie_majority": "bust"
+    },
+    "exposure": {
+      "trigger": "highest_rank_in_room",
+      "tiebreaker": "most_recently_played"
+    },
+    "game_end": {
+      "trigger": "total_resolutions_equals_room_count"
+    }
+  },
+  "ai_config": {
+    "styles": {
+      "sneaky": {
+        "description": "Plays low cards, avoids exposure, subtle support",
+        "low_card_preference": 2.0,
+        "exposure_fear": 3.0,
+        "aggression": 0.2,
+        "accuse_eagerness": 0.3,
+        "power_eagerness": 0.4
+      },
+      "bold": {
+        "description": "Plays high cards for big scores, accepts exposure risk",
+        "low_card_preference": -1.0,
+        "exposure_fear": 0.5,
+        "aggression": 0.8,
+        "accuse_eagerness": 0.5,
+        "power_eagerness": 0.7
+      },
+      "balanced": {
+        "description": "Well-rounded default play",
+        "low_card_preference": 0.5,
+        "exposure_fear": 1.5,
+        "aggression": 0.5,
+        "accuse_eagerness": 0.5,
+        "power_eagerness": 0.5
+      },
+      "disruptive": {
+        "description": "Interferes with opponents, hate-drafts, uses powers aggressively",
+        "low_card_preference": 0.0,
+        "exposure_fear": 1.0,
+        "aggression": 0.6,
+        "accuse_eagerness": 0.8,
+        "power_eagerness": 0.9
+      }
+    }
+  }
+}

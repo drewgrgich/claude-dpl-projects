@@ -1,0 +1,105 @@
+{
+  "num_games": 500,
+  "num_players": 6,
+  "decided_games": 500,
+  "timed_out": 0,
+  "timeout_rate": 0.0,
+  "avg_turns": 50.38,
+  "median_turns": 42.0,
+  "stdev_turns": 23.68877193591224,
+  "min_turns": 11,
+  "max_turns": 102,
+  "turns_p10": 26,
+  "turns_p90": 88,
+  "win_rates": {
+    "0": 0.132,
+    "1": 0.142,
+    "2": 0.166,
+    "3": 0.204,
+    "4": 0.166,
+    "5": 0.19
+  },
+  "first_player_advantage": 0.132,
+  "first_player_expected": 0.16666666666666666,
+  "sugar_crash_rate": 0.178,
+  "avg_sugar_crash_turn": 82.40449438202248,
+  "avg_scavenges_per_game": 16.938,
+  "avg_mercy_saves_per_game": 7.91,
+  "mercy_rate": 0.4669972842130122,
+  "avg_penalty_draw": 1.869220083349871,
+  "max_penalty_draw": 9,
+  "penalty_distribution": {
+    "0": 451,
+    "1": 2112,
+    "2": 1239,
+    "3": 628,
+    "4": 318,
+    "5": 162,
+    "6": 66,
+    "7": 43,
+    "8": 14,
+    "9": 6,
+    "10": 0
+  },
+  "power_totals": {
+    "RED": 1970,
+    "ORANGE": 1834,
+    "YELLOW": 1920,
+    "GREEN": 1980,
+    "BLUE": 1956,
+    "PURPLE": 2907
+  },
+  "power_per_game": {
+    "RED": 3.94,
+    "ORANGE": 3.668,
+    "YELLOW": 3.84,
+    "GREEN": 3.96,
+    "BLUE": 3.912,
+    "PURPLE": 5.814
+  },
+  "per_player": {
+    "0": {
+      "avg_cards_played": 6.624,
+      "avg_cards_drawn": 5.068,
+      "avg_scavenges": 2.946,
+      "avg_max_hand": 5.36,
+      "avg_final_hand": 2.982
+    },
+    "1": {
+      "avg_cards_played": 6.65,
+      "avg_cards_drawn": 5.368,
+      "avg_scavenges": 3,
+      "avg_max_hand": 5.442,
+      "avg_final_hand": 3.046
+    },
+    "2": {
+      "avg_cards_played": 6.24,
+      "avg_cards_drawn": 5.248,
+      "avg_scavenges": 2.92,
+      "avg_max_hand": 5.346,
+      "avg_final_hand": 3.034
+    },
+    "3": {
+      "avg_cards_played": 6.116,
+      "avg_cards_drawn": 4.606,
+      "avg_scavenges": 2.85,
+      "avg_max_hand": 5.248,
+      "avg_final_hand": 2.508
+    },
+    "4": {
+      "avg_cards_played": 5.784,
+      "avg_cards_drawn": 4.43,
+      "avg_scavenges": 2.704,
+      "avg_max_hand": 5.264,
+      "avg_final_hand": 2.698
+    },
+    "5": {
+      "avg_cards_played": 5.492,
+      "avg_cards_drawn": 4.196,
+      "avg_scavenges": 2.518,
+      "avg_max_hand": 5.224,
+      "avg_final_hand": 2.72
+    }
+  },
+  "reshuffles_per_game": 0.612
+}

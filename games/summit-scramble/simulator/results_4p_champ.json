@@ -1,0 +1,94 @@
+{
+  "num_games": 200,
+  "mode": "championship",
+  "avg_rounds": 7.78,
+  "min_rounds": 6,
+  "max_rounds": 10,
+  "championship_win_rates": {
+    "0": 0.32,
+    "1": 0.235,
+    "2": 0.22,
+    "3": 0.225
+  },
+  "avg_total_fatigue": {
+    "0": 22.79,
+    "1": 23.19,
+    "2": 23.85,
+    "3": 23.71
+  },
+  "round_level_stats": {
+    "num_games": 1556,
+    "avg_turns": 17.412596401028278,
+    "min_turns": 11,
+    "max_turns": 300,
+    "hit_turn_limit_count": 6,
+    "hit_turn_limit_rate": 0.0038560411311053984,
+    "avg_tricks": 15.039203084832906,
+    "min_tricks": 10,
+    "max_tricks": 22,
+    "win_rates": {
+      "0": 0.2577120822622108,
+      "1": 0.2570694087403599,
+      "2": 0.24293059125964012,
+      "3": 0.2422879177377892
+    },
+    "avg_finish_position": {
+      "0": 2.4613899613899615,
+      "1": 2.4855119124275595,
+      "2": 2.526417525773196,
+      "3": 2.5189954925949776
+    },
+    "formation_usage": {
+      "confetti_cannon": {
+        "total": 920,
+        "pct": 2.493968391661471
+      },
+      "daisy_chain": {
+        "total": 7452,
+        "pct": 20.201143972457913
+      },
+      "solo": {
+        "total": 18134,
+        "pct": 49.158285667814255
+      },
+      "surge": {
+        "total": 8091,
+        "pct": 21.933367670579308
+      },
+      "trip_up": {
+        "total": 2292,
+        "pct": 6.213234297487056
+      }
+    },
+    "ability_usage": {
+      "recalibrate": 2234,
+      "reclaim": 2065,
+      "revelation": 1444,
+      "rotation": 2239,
+      "scout": 1843,
+      "streamline": 1988
+    },
+    "avg_cannons_per_game": 0.41516709511568123,
+    "avg_trip_ups_per_game": 1.4730077120822622,
+    "games_with_cannon": 36.18251928020565,
+    "games_with_trip_up": 82.90488431876607,
+    "avg_max_stagnation": 1.179948586118252,
+    "worst_stagnation": 284,
+    "games_with_stagnation_10plus": 6,
+    "avg_fatigue_by_position": {
+      "-1": 8.0,
+      "1": 0.0,
+      "2": 2.0,
+      "3": 4.0,
+      "4": 6.0
+    },
+    "avg_remaining_cards_last": 1.9388464211257819,
+    "max_remaining_cards_last": 13,
+    "avg_cards_played_per_player": {
+      "0": 12.09254498714653,
+      "1": 11.886246786632391,
+      "2": 11.775562700964631,
+      "3": 11.746786632390746
+    }
+  }
+}

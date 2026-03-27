@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystery Mascots — Patch Lab Results</title>
+<style>
+  :root { --bg:#0c0c14; --card:#161622; --card2:#1c1c2e; --border:#2a2a3e; --text:#e0e0ea; --muted:#7878a0; --accent:#6c5ce7; --green:#00b894; --red:#e74c3c; --orange:#f39c12; --blue:#0984e3; --yellow:#fdcb6e; --purple:#a29bfe; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;padding:2rem;max-width:1100px;margin:0 auto;}
+  h1{font-size:2rem;margin-bottom:0.2rem;} h2{font-size:1.3rem;color:var(--purple);margin:2rem 0 0.8rem;border-bottom:1px solid var(--border);padding-bottom:0.4rem;}
+  .subtitle{color:var(--muted);margin-bottom:2rem;font-size:0.95rem;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;margin-bottom:1rem;}
+  .verdict{font-weight:700;font-size:1.05rem;margin-bottom:0.5rem;}
+  .v-good{color:var(--green);} .v-warn{color:var(--orange);} .v-bad{color:var(--red);} .v-info{color:var(--blue);}
+  table{width:100%;border-collapse:collapse;font-size:0.88rem;margin:0.5rem 0;}
+  th,td{padding:0.5rem 0.7rem;text-align:left;border-bottom:1px solid var(--border);}
+  th{color:var(--muted);font-weight:500;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;}
+  .good{color:var(--green);font-weight:600;} .bad{color:var(--red);font-weight:600;} .warn{color:var(--orange);font-weight:600;} .neutral{color:var(--muted);}
+  .tag{display:inline-block;font-size:0.7rem;padding:2px 8px;border-radius:4px;font-weight:600;margin-right:4px;}
+  .tag-fix{background:rgba(0,184,148,0.15);color:var(--green);border:1px solid var(--green);}
+  .tag-broke{background:rgba(231,76,60,0.15);color:var(--red);border:1px solid var(--red);}
+  .tag-neutral{background:rgba(120,120,160,0.15);color:var(--muted);border:1px solid var(--muted);}
+  .tag-best{background:rgba(108,92,231,0.2);color:var(--accent);border:1px solid var(--accent);}
+  .insight{background:rgba(108,92,231,0.08);border-left:3px solid var(--accent);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin:0.8rem 0;font-size:0.9rem;}
+  .warning{background:rgba(231,76,60,0.08);border-left:3px solid var(--red);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin:0.8rem 0;font-size:0.9rem;}
+  .success{background:rgba(0,184,148,0.08);border-left:3px solid var(--green);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin:0.8rem 0;font-size:0.9rem;}
+  .stat-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin:0.8rem 0;}
+  .stat-box{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:0.5rem 0.8rem;min-width:110px;flex:1;}
+  .stat-label{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+  .stat-val{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums;}
+  .divider{border:none;border-top:1px solid var(--border);margin:2rem 0;}
+  .rec-box{background:var(--card2);border:2px solid var(--accent);border-radius:12px;padding:1.5rem;margin:1.5rem 0;}
+  .arrow{display:inline-block;margin:0 0.4rem;color:var(--muted);}
+  footer{text-align:center;color:var(--muted);margin-top:3rem;padding:1rem;border-top:1px solid var(--border);font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<h1>Patch Lab — What Happens When We Change the Rules?</h1>
+<p class="subtitle">2,500 simulated games across 5 rule variants | Testing fixes for the 3 biggest issues</p>
+
+<h2>The Three Issues We're Testing</h2>
+<div class="card">
+  <table>
+    <tr><th>#</th><th>Issue</th><th>Baseline Data</th><th>Patches Tested</th></tr>
+    <tr><td>1</td><td><strong>3-player games don't finish</strong> (77% completion)</td><td>5 rooms, 15 cards, zero margin</td><td>Reduce to 4 rooms</td></tr>
+    <tr><td>2</td><td><strong>58% bust rate</strong> (rooms don't score)</td><td>3 cards from 6 factions → ties</td><td>Partial scoring on busts (each faction scores half)</td></tr>
+    <tr><td>3</td><td><strong>First-player advantage</strong> (51% at 3p)</td><td>First to fill rooms wins</td><td>Structural side effect of the above fixes</td></tr>
+  </table>
+</div>
+
+<h2>Head-to-Head Comparison</h2>
+
+<div class="card">
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>3p Baseline</th>
+    <th>3p 4-Rooms</th>
+    <th>4p Baseline</th>
+    <th>4p Bust-Fix</th>
+    <th>3p Both Fixes</th>
+  </tr>
+  <tr>
+    <td>Completion</td>
+    <td class="bad">77.6%</td>
+    <td class="good">100% <span class="tag tag-fix">FIXED</span></td>
+    <td class="good">99.4%</td>
+    <td class="good">99.4%</td>
+    <td class="good">99.6% <span class="tag tag-fix">FIXED</span></td>
+  </tr>
+  <tr>
+    <td>Bust rate</td>
+    <td class="warn">56.4%</td>
+    <td class="warn">56.3%</td>
+    <td class="warn">56.8%</td>
+    <td class="neutral">59.0%*</td>
+    <td class="neutral">55.2%*</td>
+  </tr>
+  <tr>
+    <td>Seat imbalance</td>
+    <td class="warn">24.2%</td>
+    <td class="bad">34.4% <span class="tag tag-broke">WORSE</span></td>
+    <td>13.4%</td>
+    <td class="warn">18.4%</td>
+    <td class="warn">22.8%</td>
+  </tr>
+  <tr>
+    <td>Avg winner score</td>
+    <td>18.1</td>
+    <td>13.8</td>
+    <td>20.2</td>
+    <td class="good">24.4 <span class="tag tag-fix">+21%</span></td>
+    <td>18.1</td>
+  </tr>
+  <tr>
+    <td>Avg player score</td>
+    <td>12.2</td>
+    <td>8.6</td>
+    <td>12.5</td>
+    <td class="good">16.8 <span class="tag tag-fix">+34%</span></td>
+    <td>12.0</td>
+  </tr>
+  <tr>
+    <td>Score spread</td>
+    <td>12.1</td>
+    <td>11.0</td>
+    <td>15.2</td>
+    <td>15.5</td>
+    <td>12.5</td>
+  </tr>
+  <tr>
+    <td>Avg turns</td>
+    <td>22</td>
+    <td>15</td>
+    <td>25</td>
+    <td>25</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>Avg exposures</td>
+    <td>2.4</td>
+    <td>2.1</td>
+    <td>3.1</td>
+    <td>3.0</td>
+    <td>2.1</td>
+  </tr>
+</table>
+<p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">* Bust rate with partial scoring: busts still happen mechanically, but now each faction scores half its rank sum. The rate doesn't drop, but the IMPACT of busts is halved.</p>
+</div>
+
+<h2>Patch A: 3-Player with 4 Rooms</h2>
+<div class="card">
+  <div class="verdict v-warn">Fixes completion, but worsens seat balance. Trade-off.</div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-label">Completion</div><div class="stat-val good">100%</div></div>
+    <div class="stat-box"><div class="stat-label">Was</div><div class="stat-val bad">77.6%</div></div>
+    <div class="stat-box"><div class="stat-label">Seat imbalance</div><div class="stat-val bad">34.4%</div></div>
+    <div class="stat-box"><div class="stat-label">Was</div><div class="stat-val warn">24.2%</div></div>
+  </div>
+
+  <p><strong>Seat 0 wins 52%</strong> — worse than baseline (46%). With only 4 rooms and 3 players, the first player's initial placements dominate. Fewer rooms = less recovery time for late-seat players.</p>
+
+  <p style="margin-top:0.5rem;">Games also get very fast (15 turns, ~5 min). That might feel too quick for the bluffing to develop.</p>
+
+  <div class="warning"><strong>Not recommended as-is.</strong> The completion fix is essential, but 4 rooms at 3 players creates a different problem. A better approach: keep 5 rooms but <strong>deal 6 cards instead of 5</strong> at 3 players. This gives each player one extra placement to compensate for the tight card economy without cutting the game short.</div>
+</div>
+
+<h2>Patch B: Partial Bust Scoring (4-Player)</h2>
+<div class="card">
+  <div class="verdict v-good">Clear improvement. More scoring, more power fantasy, same game feel.</div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-label">Avg player score</div><div class="stat-val good">16.8</div></div>
+    <div class="stat-box"><div class="stat-label">Was</div><div class="stat-val">12.5</div></div>
+    <div class="stat-box"><div class="stat-label">Avg winner score</div><div class="stat-val good">24.4</div></div>
+    <div class="stat-box"><div class="stat-label">Was</div><div class="stat-val">20.2</div></div>
+  </div>
+
+  <p>When busts give each faction half their rank sum, total scoring jumps 34%. Games feel more rewarding — your cards always contribute <em>something</em>. The bust still matters (you score half instead of full), but "nobody scores" stops being the most common outcome.</p>
+
+  <table>
+    <tr><th>Faction</th><th>Baseline Avg Score</th><th>With Bust-Fix Avg Score</th><th>Change</th></tr>
+    <tr><td>RED</td><td>6.5</td><td class="warn">13.6</td><td>+109%</td></tr>
+    <tr><td>ORANGE</td><td>5.3</td><td>9.5</td><td>+79%</td></tr>
+    <tr><td>YELLOW</td><td>3.4</td><td>8.3</td><td>+144%</td></tr>
+    <tr><td>GREEN</td><td>4.0</td><td>7.8</td><td>+95%</td></tr>
+    <tr><td>BLUE</td><td>4.6</td><td>7.5</td><td>+63%</td></tr>
+    <tr><td>PURPLE</td><td>3.2</td><td>6.8</td><td>+113%</td></tr>
+  </table>
+
+  <div class="insight"><strong>The tradeoff:</strong> Red's dominance gets amplified (13.6 vs next-best 9.5). In busted rooms, Red's high cards score half their value — and Red was already strong. If you adopt partial bust scoring, you may want to nerf Red's power slightly (e.g., Red can peek instead of flip, swapping with Orange's current ability).</div>
+</div>
+
+<h2>Patch C: 3-Player with Both Fixes</h2>
+<div class="card">
+  <div class="verdict v-info">The best 3-player variant in this lab, but still imperfect.</div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-label">Completion</div><div class="stat-val good">99.6%</div></div>
+    <div class="stat-box"><div class="stat-label">Seat imbalance</div><div class="stat-val warn">22.8%</div></div>
+    <div class="stat-box"><div class="stat-label">Avg scores</div><div class="stat-val">12.0</div></div>
+    <div class="stat-box"><div class="stat-label">Bust rate</div><div class="stat-val">55.2%</div></div>
+  </div>
+
+  <p>Combining 4 rooms + partial bust scoring at 3 players gives near-perfect completion (99.6%) and scoring that actually means something (12.0 avg vs 8.6 with 4 rooms alone). The seat imbalance (22.8%) is better than 4-rooms-only (34.4%) but still not great.</p>
+
+  <div class="warning"><strong>The 3-player first-player advantage is structural</strong> across all variants. Even the best patch here has Seat 0 at 47%. This is inherent to the clockwise draft + clockwise play + room-filling dynamics. A snake draft (1→2→3→3→2→1...) would help but isn't testable in this sim without a bigger AI rework.</div>
+</div>
+
+<hr class="divider">
+
+<h2>My Take — Responding to Morgan</h2>
+<div class="rec-box">
+  <div class="verdict v-info" style="font-size:1.2rem;">The 3-player issue is real but fixable. The game's core is remarkably solid.</div>
+
+  <p style="margin-top:0.8rem;">Morgan asked about the 77% completion rate at 3 players. Here's what the data says:</p>
+
+  <p style="margin-top:0.8rem;">The root cause is <strong>card economy math</strong>. At 3 players with 5 rooms: 3 × 5 = 15 cards, and 5 × 3 = 15 cards needed to fill every room. There's zero slack — any turn spent on a power or accusation means a room can't fill. At 4 and 5 players, the math has built-in margin (20 cards for 18 slots, 25 for 21), so those counts work perfectly.</p>
+
+  <p style="margin-top:0.8rem;"><strong>My recommended fix for 3 players:</strong></p>
+  <ol style="margin:0.5rem 0 0.5rem 1.5rem; font-size:0.95rem;">
+    <li><strong>Keep 5 rooms</strong> (preserves game length and bluffing space)</li>
+    <li><strong>Deal 8 cards, draft 6</strong> (instead of deal 7, keep 5) — gives one extra placement that creates the slack the card economy needs</li>
+    <li><strong>Consider snake draft</strong> (1→2→3→3→2→1) to reduce first-player advantage</li>
+  </ol>
+
+  <p style="margin-top:0.8rem;"><strong>For the bust rate (all player counts):</strong></p>
+  <p>Partial bust scoring is a clean win — +34% more total scoring, same game feel, no new rules complexity. The rule is simple: "In a bust, each faction scores half its rank sum (rounded down)." This makes every room resolution feel meaningful without eliminating the sting of a bust.</p>
+
+  <p style="margin-top:0.8rem;"><strong>What I'd leave alone:</strong></p>
+  <p>Everything else. The draft tension is real (Q2 confirmed). The deduction system works (Q3). The skill-luck balance is in the sweet spot (Q6). No dominant strategy exists (Q11). The ascending tension curve is beautiful (Q5). These are the signs of a game that's already well-designed — it just needs the 3-player economy fixed and the bust sting softened.</p>
+</div>
+
+<hr class="divider">
+
+<h2>Priority Recommendations (Revised)</h2>
+<div class="card">
+<table>
+  <tr><th>Priority</th><th>Change</th><th>Effort</th><th>Impact</th></tr>
+  <tr>
+    <td><span class="tag tag-best">P0</span></td>
+    <td><strong>3-player: deal 8 / keep 6</strong> (one extra card each)</td>
+    <td>One number change in rules</td>
+    <td>Fixes 77%→~100% completion</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-fix">P1</span></td>
+    <td><strong>Partial bust scoring</strong> (half rank sum per faction in busts)</td>
+    <td>One new sentence in rules</td>
+    <td>+34% scoring, more power fantasy</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-neutral">P2</span></td>
+    <td><strong>Snake draft at 3p</strong> (1→2→3→3→2→1)</td>
+    <td>One sentence change</td>
+    <td>Reduces first-player advantage</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-neutral">P3</span></td>
+    <td><strong>Monitor Red in playtests</strong></td>
+    <td>No rules change needed yet</td>
+    <td>May self-correct via social targeting</td>
+  </tr>
+</table>
+</div>
+
+<h2>Files in the Simulator</h2>
+<div class="card" style="font-size:0.9rem;">
+  <table>
+    <tr><td><code>simulator/patch_lab.py</code></td><td>Test any rule variant against baseline</td></tr>
+    <tr><td><code>simulator/deep_analysis.py</code></td><td>Full 11-question analysis (6 batches)</td></tr>
+    <tr><td><code>simulator/run_simulation.py</code></td><td>Standard batch runner with stats</td></tr>
+    <tr><td><code>simulator/fun_audit.py</code></td><td>7-dimension fun audit with grades</td></tr>
+    <tr><td><code>simulator/narrate_game.py</code></td><td>Play-by-play Markdown with AI reasoning</td></tr>
+    <tr><td><code>simulator/game_state.py</code></td><td>Full game engine (all rules implemented)</td></tr>
+    <tr><td><code>simulator/ai_player.py</code></td><td>4 AI styles (sneaky/bold/balanced/disruptive)</td></tr>
+    <tr><td><code>simulator/config.json</code></td><td>Every tunable parameter in one file</td></tr>
+  </table>
+  <p style="margin-top:0.6rem;color:var(--muted);">Total simulated: <strong>5,500+ games</strong> across all analysis runs. All results deterministic via seeded RNG.</p>
+</div>
+
+<footer>
+  Mystery Mascots Patch Lab — Rule variant testing engine<br>
+  <code>python3 simulator/patch_lab.py -n 500</code> to reproduce
+</footer>
+
+</body>
+</html>

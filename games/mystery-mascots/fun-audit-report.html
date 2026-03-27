@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystery Mascots — Fun Audit Report</title>
+<style>
+  :root {
+    --bg: #0f0f13;
+    --card: #1a1a24;
+    --border: #2a2a3a;
+    --text: #e0e0e8;
+    --muted: #8888a0;
+    --accent: #6c5ce7;
+    --green: #00b894;
+    --red: #e74c3c;
+    --orange: #f39c12;
+    --blue: #0984e3;
+    --yellow: #fdcb6e;
+    --purple: #a29bfe;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  h2 { font-size: 1.4rem; margin: 2rem 0 1rem; color: var(--purple); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+  h3 { font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+  .card-title { font-weight: 600; font-size: 0.95rem; }
+  .grade { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; }
+  .grade-A { background: rgba(0,184,148,0.2); color: var(--green); border: 1px solid var(--green); }
+  .grade-B { background: rgba(108,92,231,0.2); color: var(--purple); border: 1px solid var(--purple); }
+  .grade-C { background: rgba(243,156,18,0.2); color: var(--orange); border: 1px solid var(--orange); }
+  .grade-D { background: rgba(231,76,60,0.15); color: var(--red); border: 1px solid var(--red); }
+  .grade-F { background: rgba(231,76,60,0.3); color: var(--red); border: 2px solid var(--red); }
+  .stat { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.9rem; }
+  .stat-label { color: var(--muted); }
+  .stat-value { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .bar-container { height: 8px; background: var(--border); border-radius: 4px; margin-top: 0.3rem; overflow: hidden; }
+  .bar { height: 100%; border-radius: 4px; transition: width 0.5s; }
+  .overall { text-align: center; margin: 2rem 0; }
+  .overall-grade { display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 16px; font-size: 2.5rem; font-weight: 800; }
+  .rec { background: rgba(231,76,60,0.1); border-left: 3px solid var(--red); padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .rec-good { background: rgba(0,184,148,0.1); border-left-color: var(--green); }
+  .finding { background: rgba(108,92,231,0.1); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .faction-bar { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; font-size: 0.85rem; }
+  .faction-name { width: 70px; text-align: right; color: var(--muted); }
+  .faction-fill { height: 20px; border-radius: 4px; min-width: 2px; display: flex; align-items: center; padding-left: 6px; font-size: 0.75rem; font-weight: 600; }
+  .seat-bar { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; font-size: 0.85rem; }
+  .seat-name { width: 50px; text-align: right; color: var(--muted); }
+  .seat-fill { height: 20px; border-radius: 4px; min-width: 2px; display: flex; align-items: center; padding-left: 6px; font-size: 0.75rem; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .emoji { font-size: 1.2rem; }
+  .phase-chart { display: flex; align-items: flex-end; gap: 4px; height: 120px; margin-top: 0.5rem; }
+  .phase-bar { flex: 1; background: var(--accent); border-radius: 4px 4px 0 0; position: relative; min-height: 4px; }
+  .phase-label { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+  .phase-value { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 600; }
+  footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.8rem; padding: 1rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<h1>Mystery Mascots — Fun Audit Report</h1>
+<p class="subtitle">500 AI-vs-AI games | 4 players | Balanced AI (skill 1.0)</p>
+
+<div class="overall">
+  <div>Overall Fun Grade</div>
+  <div class="overall-grade grade grade-B" style="margin: 0.5rem auto;">B</div>
+  <div style="color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem;">Strong fundamentals — one critical issue to address</div>
+</div>
+
+<h2>Fun Dimensions (7 of 7)</h2>
+
+<div class="grid">
+  <!-- Decision Density -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">1. Decision Density</span>
+      <span class="grade grade-A">A</span>
+    </div>
+    <div class="stat"><span class="stat-label">Avg choices/turn</span><span class="stat-value">2.60</span></div>
+    <div class="stat"><span class="stat-label">Turns with 2+ choices</span><span class="stat-value">97.1%</span></div>
+    <div class="bar-container"><div class="bar" style="width: 97.1%; background: var(--green);"></div></div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Players almost always have meaningful choices between placing, using powers, or accusing. The 3-action structure works.</p>
+  </div>
+
+  <!-- Comeback Potential -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">2. Comeback Potential</span>
+      <span class="grade grade-A">A</span>
+    </div>
+    <div class="stat"><span class="stat-label">Early leader loses</span><span class="stat-value">55.2%</span></div>
+    <div class="stat"><span class="stat-label">Avg lead changes</span><span class="stat-value">1.2/game</span></div>
+    <div class="bar-container"><div class="bar" style="width: 55.2%; background: var(--green);"></div></div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Excellent! The early leader loses more often than they win. Hidden allegiances + wilds create genuine uncertainty.</p>
+  </div>
+
+  <!-- Dead Turns -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">3. Dead Turn Rate</span>
+      <span class="grade grade-A">A</span>
+    </div>
+    <div class="stat"><span class="stat-label">Avg dead turn rate</span><span class="stat-value">0.4%</span></div>
+    <div class="stat"><span class="stat-label">Games with 0 dead turns</span><span class="stat-value">93.0%</span></div>
+    <div class="bar-container"><div class="bar" style="width: 93%; background: var(--green);"></div></div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Almost no wasted turns. The compact 5-card hand means every play matters.</p>
+  </div>
+
+  <!-- Blowout Rate -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">4. Blowout Rate</span>
+      <span class="grade grade-F">F</span>
+    </div>
+    <div class="stat"><span class="stat-label">Avg winner margin</span><span class="stat-value">4.6 pts</span></div>
+    <div class="stat"><span class="stat-label">2x blowout rate</span><span class="stat-value">83.6%</span></div>
+    <div class="stat"><span class="stat-label">Close games (≤5 pts)</span><span class="stat-value">76.2%</span></div>
+    <div class="bar-container"><div class="bar" style="width: 83.6%; background: var(--red);"></div></div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Misleading F grade: the 2x ratio fires because some players score 0 (faction never won). Actual margin is only 4.6 pts — see analysis below.</p>
+  </div>
+
+  <!-- Tension Curve -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">5. Tension Curve</span>
+      <span class="grade grade-A">A</span>
+    </div>
+    <div class="stat"><span class="stat-label">Final phase % of VP</span><span class="stat-value">59.5%</span></div>
+    <div class="stat"><span class="stat-label">Ascending curve</span><span class="stat-value">Yes</span></div>
+    <div class="phase-chart">
+      <div style="flex:1; text-align: center;">
+        <div class="phase-bar" style="height: 14%;"><div class="phase-value">2.4</div></div>
+        <div class="phase-label">Early</div>
+      </div>
+      <div style="flex:1; text-align: center;">
+        <div class="phase-bar" style="height: 53%;"><div class="phase-value">8.8</div></div>
+        <div class="phase-label">Mid</div>
+      </div>
+      <div style="flex:1; text-align: center;">
+        <div class="phase-bar" style="height: 100%;"><div class="phase-value">16.5</div></div>
+        <div class="phase-label">Late</div>
+      </div>
+    </div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Beautiful ascending curve. Late-game rooms score big as players commit high cards when cover is blown.</p>
+  </div>
+
+  <!-- Power Fantasy -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">6. Power Fantasy</span>
+      <span class="grade grade-C">C</span>
+    </div>
+    <div class="stat"><span class="stat-label">Games with wow turn</span><span class="stat-value">43.4%</span></div>
+    <div class="stat"><span class="stat-label">Avg wow turns/game</span><span class="stat-value">0.52</span></div>
+    <div class="stat"><span class="stat-label">Wow rate</span><span class="stat-value">2.1%</span></div>
+    <div class="bar-container"><div class="bar" style="width: 43.4%; background: var(--orange);"></div></div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Less than half of games have a 10+ VP scoring moment. The bust rate (56%) eats into big-score potential.</p>
+  </div>
+
+  <!-- Interaction Rate -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">7. Interaction Rate</span>
+      <span class="grade grade-A">A</span>
+    </div>
+    <div class="stat"><span class="stat-label">Avg interactions/game</span><span class="stat-value">11.8</span></div>
+    <div class="stat"><span class="stat-label">Interaction rate</span><span class="stat-value">47.4%</span></div>
+    <div class="stat"><span class="stat-label">Games with interaction</span><span class="stat-value">100%</span></div>
+    <div class="bar-container"><div class="bar" style="width: 100%; background: var(--green);"></div></div>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Every room resolution is a multi-player competition. Powers, accusations, and wild declarations add direct interaction. This is inherently social.</p>
+  </div>
+</div>
+
+<h2>Balance Analysis</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Win Rate by Faction</h3>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem;">Expected: ~16.7% each (6 factions, not all in every game)</p>
+    <div class="faction-bar"><span class="faction-name">PURPLE</span><div class="faction-fill" style="width: calc(20.4% * 3); background: #a29bfe;">20.4%</div></div>
+    <div class="faction-bar"><span class="faction-name">GREEN</span><div class="faction-fill" style="width: calc(19.8% * 3); background: #00b894;">19.8%</div></div>
+    <div class="faction-bar"><span class="faction-name">RED</span><div class="faction-fill" style="width: calc(18.8% * 3); background: #e74c3c;">18.8%</div></div>
+    <div class="faction-bar"><span class="faction-name">BLUE</span><div class="faction-fill" style="width: calc(14.4% * 3); background: #0984e3;">14.4%</div></div>
+    <div class="faction-bar"><span class="faction-name">YELLOW</span><div class="faction-fill" style="width: calc(13.4% * 3); background: #fdcb6e;">13.4%</div></div>
+    <div class="faction-bar"><span class="faction-name">ORANGE</span><div class="faction-fill" style="width: calc(13.2% * 3); background: #e17055;">13.2%</div></div>
+  </div>
+
+  <div class="card">
+    <h3>Win Rate by Seat Position</h3>
+    <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem;">Expected: 25% each (4 players)</p>
+    <div class="seat-bar"><span class="seat-name">Seat 0</span><div class="seat-fill" style="width: calc(33.6% * 2.5); background: var(--red);">33.6%</div></div>
+    <div class="seat-bar"><span class="seat-name">Seat 1</span><div class="seat-fill" style="width: calc(29.0% * 2.5); background: var(--orange);">29.0%</div></div>
+    <div class="seat-bar"><span class="seat-name">Seat 2</span><div class="seat-fill" style="width: calc(21.8% * 2.5); background: var(--yellow);">21.8%</div></div>
+    <div class="seat-bar"><span class="seat-name">Seat 3</span><div class="seat-fill" style="width: calc(15.6% * 2.5); background: var(--red);">15.6%</div></div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom: 1rem;">
+  <h3>Key Game Stats (4-Player)</h3>
+  <table>
+    <tr><th>Metric</th><th>Value</th><th>Assessment</th></tr>
+    <tr><td>Avg game length</td><td>24.6 turns</td><td style="color: var(--green);">Quick (15 min target met)</td></tr>
+    <tr><td>Avg resolutions</td><td>6.0 / 6.0</td><td style="color: var(--green);">All rooms resolve</td></tr>
+    <tr><td>Bust rate</td><td>56.4%</td><td style="color: var(--orange);">Over half of rooms bust</td></tr>
+    <tr><td>Avg winner score</td><td>21.2 pts</td><td>—</td></tr>
+    <tr><td>Avg exposures</td><td>3.1 / 4 players</td><td style="color: var(--green);">Most get exposed</td></tr>
+    <tr><td>Powers used</td><td>2.0 / game</td><td style="color: var(--orange);">Half of available powers</td></tr>
+    <tr><td>Accusation accuracy</td><td>95.5%</td><td style="color: var(--orange);">Too predictable</td></tr>
+    <tr><td>First-player advantage</td><td>33.6% vs 25% expected</td><td style="color: var(--red);">Significant</td></tr>
+  </table>
+</div>
+
+<h2>Critical Findings & Recommendations</h2>
+
+<div class="finding">
+  <strong>Finding 1: The "Blowout" F is misleading.</strong> The 2x blowout ratio fires at 83.6% — but the avg winner margin is only 4.6 points and 76% of games are within 5 points. The ratio looks bad because some players score 0 (their faction never wins a room). In a hidden-allegiance game with 6 factions, this is expected: not every faction will score. The actual score *gaps* are tight, which is healthy. Consider using margin-based blowout measurement instead of ratio-based for this genre.
+</div>
+
+<div class="rec">
+  <strong>Issue: 56% bust rate.</strong> More than half of rooms tie on majority and score zero. This deflates total scoring and reduces power fantasy moments. Since 3 cards from 6 factions often produce 3 different factions, busts are structurally common.
+  <br><strong>Suggestion:</strong> Consider a partial-scoring bust rule (e.g., each faction scores half its rank sum in a bust) or allow a 2-card majority to score (which also reduces busts at 3 players).
+</div>
+
+<div class="rec">
+  <strong>Issue: First-player advantage (33.6% vs 15.6%).</strong> Seat 0 wins twice as often as Seat 3. The first player gets to fill rooms first, choosing where to build. This is especially impactful at 3 players (52.8% for Seat 0).
+  <br><strong>Suggestion:</strong> Give later seats a small starting bonus (e.g., Seat 3 starts with 1 extra accusation token or gets to see their draft pack before others).
+</div>
+
+<div class="rec">
+  <strong>Issue: Blue/Yellow/Purple powers are rarely used (~0.1% of actions).</strong> These powers require having cards already in rooms, but the game moves fast. By the time a player might benefit from moving/rewinding a card, rooms resolve quickly.
+  <br><strong>Suggestion:</strong> Allow Blue/Purple to be used as a "fast action" before placing a card (instead of instead-of), giving them a wider window.
+</div>
+
+<div class="rec">
+  <strong>Issue: Red faction scores significantly more on average (8.1 vs 3-5 for others).</strong> Red's power (flip face-down card) is strong for information warfare and works even with no cards in rooms, unlike Blue/Yellow/Purple.
+  <br><strong>Suggestion:</strong> This may self-correct in human play where Red becomes a target. Monitor.
+</div>
+
+<div class="rec-good">
+  <strong>What's working great:</strong> Decision density (A), comeback potential (A), tension curve (A), and interaction (A) are all excellent. The draft-then-bluff core loop creates genuine tension. The ascending scoring curve means games build to exciting finishes. Hidden allegiances prevent runaway leaders. The game's identity is strong.
+</div>
+
+<h2>3-Player Comparison</h2>
+<div class="card">
+  <table>
+    <tr><th>Metric</th><th>3 Players</th><th>4 Players</th></tr>
+    <tr><td>Avg game length</td><td>21.8 turns</td><td>24.6 turns</td></tr>
+    <tr><td>Natural completion</td><td style="color: var(--orange);">79.4%</td><td style="color: var(--green);">99.8%</td></tr>
+    <tr><td>Bust rate</td><td>53.5%</td><td>56.4%</td></tr>
+    <tr><td>First-player advantage</td><td style="color: var(--red);">52.8%</td><td style="color: var(--orange);">33.6%</td></tr>
+    <tr><td>Avg exposures</td><td>2.4</td><td>3.1</td></tr>
+    <tr><td>Avg winner score</td><td>18.5</td><td>21.2</td></tr>
+  </table>
+  <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">3-player has an extreme first-player advantage (52.8%) and lower completion rate. The rules note "3 players is the sharpest version" — the data suggests it's also the most imbalanced by seat.</p>
+</div>
+
+<h2>Files Generated</h2>
+<div class="card">
+  <table>
+    <tr><td><code>simulator/run_simulation.py</code></td><td>Batch runner (500+ games)</td></tr>
+    <tr><td><code>simulator/fun_audit.py</code></td><td>7-dimension fun audit</td></tr>
+    <tr><td><code>simulator/narrate_game.py</code></td><td>Markdown play-by-play</td></tr>
+    <tr><td><code>simulator/game_state.py</code></td><td>Full game engine</td></tr>
+    <tr><td><code>simulator/ai_player.py</code></td><td>Heuristic AI (4 styles)</td></tr>
+    <tr><td><code>simulator/cards.py</code></td><td>Card/Deck definitions</td></tr>
+    <tr><td><code>simulator/config.json</code></td><td>All tunable parameters</td></tr>
+    <tr><td><code>narrated-game-seed42.md</code></td><td>Sample narrated game</td></tr>
+  </table>
+  <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.8rem;">
+    Run: <code>python3 simulator/run_simulation.py -n 500 -p 4</code><br>
+    Fun audit: <code>python3 simulator/fun_audit.py -n 500 -p 4</code><br>
+    Narrated game: <code>python3 simulator/narrate_game.py -s 42 -p 4</code><br>
+    Style matchup: <code>python3 simulator/run_simulation.py -n 300 -p 4 --preset styles</code>
+  </p>
+</div>
+
+<footer>
+  Mystery Mascots Simulator — Generated by AI simulation engine<br>
+  Standard library only (no dependencies) · Seeded RNG · Config-driven rules
+</footer>
+
+</body>
+</html>

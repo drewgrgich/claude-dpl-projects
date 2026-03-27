@@ -1,0 +1,88 @@
+{
+  "game_rules": {
+    "num_players": 4,
+    "hand_sizes": {
+      "3": 9,
+      "4": 8,
+      "5": 7
+    },
+    "vp_target": 50,
+    "max_rounds": 20,
+    "max_tricks_per_round": 50,
+
+    "deck": {
+      "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+      "faction_names": {
+        "RED": "Finders-Keepers",
+        "ORANGE": "Munchies",
+        "YELLOW": "Tinkerers",
+        "GREEN": "Prognosticationers",
+        "BLUE": "Magicians",
+        "PURPLE": "Time Travelers"
+      },
+      "min_rank": 0,
+      "max_rank": 10,
+      "total_cards": 66
+    },
+
+    "council_balance": {
+      "seats": 3,
+      "seat_names": ["THE BIG CHEESE (Trump)", "THE FAVORITES (Elite)", "THE WOBBLY SEAT (Chaos)"],
+      "description": "Reveal cards until 3 different factions appear. 1st = Trump, 2nd = Elite, 3rd = Wobbly (low wins when LED)."
+    },
+
+    "scoring": {
+      "method": "stash",
+      "vp_per_card": 1,
+      "description": "Won tricks go face-down into player's Collected Stash. 1 card = 1 VP."
+    },
+
+    "intern_rule": {
+      "rank": 0,
+      "draw_count": 1,
+      "description": "Playing a rank 0 card draws 1 card from the Vault immediately."
+    },
+
+    "final_bell": {
+      "enabled": true,
+      "description": "When a player empties their hand, finish trick, then player to their left leads one final trick."
+    },
+
+    "talents": {
+      "enabled": true,
+      "all_ranks_eligible": true,
+      "talent_list": {
+        "RED": {
+          "name": "Borrow Aggressively",
+          "effect": "Reveal 1 random card from opponent's hand. May discard 1 from your hand to force them to discard the revealed card."
+        },
+        "ORANGE": {
+          "name": "Snack Forecast",
+          "effect": "Look at top 3 of Vault. Add 1 to hand. Put other 2 on bottom."
+        },
+        "YELLOW": {
+          "name": "Quick Adjustment",
+          "effect": "Look at top card of Vault. May swap 1 card from hand with it."
+        },
+        "GREEN": {
+          "name": "Flow Correction",
+          "effect": "Draw 2 cards. Then place 1 card from hand on bottom of Vault."
+        },
+        "BLUE": {
+          "name": "Fair Trade (Probably)",
+          "effect": "Take 1 random card from opponent. Give them 1 card from your hand."
+        },
+        "PURPLE": {
+          "name": "Pocket the Past",
+          "effect": "Bank 1 card from hand to Stash (free VP). Draw 1. Discard 1."
+        }
+      }
+    },
+
+    "new_round": {
+      "dealer_rule": "pass_left",
+      "leader_rule": "lowest_score",
+      "description": "Shuffle everything and re-deal. Lowest score leads new round."
+    }
+  }
+}

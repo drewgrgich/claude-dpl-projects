@@ -1,0 +1,26 @@
+name,faction,rank,personality,signature,signature_cost
+Brawlrus,Red,8,2+ of your Monsters in arena → highest gets +1 rank,Heroic Intervention (1/rd): Move your Monster from adjacent arena here,1/round
+Scorchbug,Red,3,2+ of your Monsters in arena → highest gets +1 rank,,
+Flamebeast,Red,6,2+ of your Monsters in arena → highest gets +1 rank,,
+Ember Pup,Red,1,2+ of your Monsters in arena → highest gets +1 rank,,
+Tangerine Dream,Orange,7,First Orange in arena with no other Orange → +1 rank,Big Borrow (ONCE/GAME): Lose by ≤3 → steal rank 1-5 Monster to Trophy (+1 VP),once
+Citrus Golem,Orange,4,First Orange in arena with no other Orange → +1 rank,,
+Zestling,Orange,2,First Orange in arena with no other Orange → +1 rank,,
+Peelback,Orange,5,First Orange in arena with no other Orange → +1 rank,,
+Goldmane,Yellow,9,First 2 Monsters you play each round → each +1 rank,Double-Install (1/rd): Play 2nd Monster to same arena and draw 1,1/round
+Sunspot,Yellow,4,First 2 Monsters you play each round → each +1 rank,,
+Glintfox,Yellow,2,First 2 Monsters you play each round → each +1 rank,,
+Honeybadger,Yellow,6,First 2 Monsters you play each round → each +1 rank,,
+Thornback,Green,7,Before playing peek top card of deck — keep or discard,Scheduled Outcome (1/rd): Draw 2 keep 1 discard 1,1/round
+Mossling,Green,3,Before playing peek top card of deck — keep or discard,,
+Vinewhip,Green,5,Before playing peek top card of deck — keep or discard,,
+Fern Titan,Green,10,Before playing peek top card of deck — keep or discard,,
+Tidalwave,Blue,8,When playing Blue may return your other Monster from that arena to hand,Is This Your Card? (1/rd): Swap your/opponent's Monster in same arena (ranks within 3),1/round
+Droplet,Blue,2,When playing Blue may return your other Monster from that arena to hand,,
+Riptide,Blue,5,When playing Blue may return your other Monster from that arena to hand,,
+Coralcrab,Blue,4,When playing Blue may return your other Monster from that arena to hand,,
+Shadowmere,Purple,9,Keep 2 cards between rounds instead of discarding all,Rewind (1/rd): Take top discard if rank 1-6,1/round
+Duskwisp,Purple,1,Keep 2 cards between rounds instead of discarding all,,
+Nightcrawler,Purple,6,Keep 2 cards between rounds instead of discarding all,,
+Voidling,Purple,3,Keep 2 cards between rounds instead of discarding all,,
+Chameleon,Neutral,0,Choose color when placed in empty arena. Max 2/round per player.,,

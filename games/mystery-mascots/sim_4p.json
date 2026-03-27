@@ -1,0 +1,62 @@
+{
+  "num_games": 500,
+  "num_players": 4,
+  "avg_turns": 24.578,
+  "min_turns": 19,
+  "max_turns": 35,
+  "completion_rate": 0.998,
+  "avg_resolutions": 5.998,
+  "bust_rate": 0.5635211737245749,
+  "avg_busts_per_game": 3.38,
+  "win_rate_by_seat": {
+    "0": 0.336,
+    "1": 0.29,
+    "2": 0.218,
+    "3": 0.156
+  },
+  "win_rate_by_faction": {
+    "BLUE": 0.144,
+    "GREEN": 0.198,
+    "ORANGE": 0.132,
+    "PURPLE": 0.204,
+    "RED": 0.188,
+    "YELLOW": 0.134
+  },
+  "avg_winner_score": 21.164,
+  "avg_score_spread": 15.842,
+  "avg_player_score": 13.307,
+  "avg_faction_scores": {
+    "RED": 8.084,
+    "ORANGE": 4.386,
+    "YELLOW": 3.352,
+    "GREEN": 4.876,
+    "BLUE": 3.214,
+    "PURPLE": 3.888
+  },
+  "avg_exposures": 3.11,
+  "action_distribution": {
+    "place": 0.7342122395833334,
+    "accuse": 0.18253580729166666,
+    "power_green": 0.029296875,
+    "power_orange": 0.020670572916666668,
+    "power_red": 0.025553385416666668,
+    "power_yellow": 0.0008951822916666666,
+    "pass": 0.0034993489583333335,
+    "power_purple": 0.0016276041666666667,
+    "power_blue": 0.001708984375
+  },
+  "action_totals": {
+    "place": 9022,
+    "accuse": 2243,
+    "power_green": 360,
+    "power_orange": 254,
+    "power_red": 314,
+    "power_yellow": 11,
+    "pass": 43,
+    "power_purple": 20,
+    "power_blue": 21
+  },
+  "avg_accusations_per_game": 4.486,
+  "accusation_accuracy": 0.9549710209540794,
+  "avg_powers_per_game": 1.96
+}

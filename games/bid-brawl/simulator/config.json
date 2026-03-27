@@ -1,0 +1,20 @@
+{
+  "game": "Bid Brawl",
+  "version": "1.0",
+  "deck_size": 58,
+  "hand_size": 5,
+  "market_size": {
+    "2": 3,
+    "3": 4,
+    "4": 4,
+    "5": 5
+  },
+  "target_games": {
+    "2": 50,
+    "3": 75,
+    "4": 100
+  },
+  "max_rounds_2p": 8,
+  "underdog_reroll": true,
+  "suit_priority": ["Spades", "Hearts", "Diamonds", "Clubs"]
+}

@@ -1,0 +1,54 @@
+{
+  "game_rules": {
+    "deck": {
+      "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+      "ranks": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "power_threshold": 6,
+      "description": "6 factions x 11 ranks = 66 cards. Ranks 6-10 trigger faction powers."
+    },
+    "setup": {
+      "starting_hand": {
+        "2_player": 7,
+        "3_player": 7,
+        "4_player": 6,
+        "5_player": 6,
+        "6_player": 5
+      },
+      "p0_bonus_card": false,
+      "p0_bonus_card_description": "If true, P0 is dealt 1 extra card, then discards 1 after seeing the starting pit card. Compensates for first-player information disadvantage.",
+      "p0_fewer_cards": 0,
+      "p0_fewer_cards_description": "If > 0, P0 starts with this many fewer cards. E.g. 1 means P0 starts with (hand_size - 1). Compensates for turn-order disadvantage.",
+      "description": "Cards dealt to each player at game start."
+    },
+    "play": {
+      "wild_faction": "PURPLE",
+      "sugar_crash_reshuffle_count": 2,
+      "sugar_crash_plays_per_turn": 2,
+      "max_turns": 300,
+      "description": "Purple is wild. After 2nd reshuffle, Sugar Crash kicks in (play 2 cards per turn)."
+    },
+    "powers": {
+      "hot_potato_cards": 1,
+      "foresaw_peek_count": 3,
+      "foresaw_take_count": 1,
+      "description": "Tunable values for faction power effects."
+    },
+    "faction_names": {
+      "RED": "Super-Dupes",
+      "ORANGE": "Finders-Keepers",
+      "YELLOW": "Tinkerers",
+      "GREEN": "Prognosticationers",
+      "BLUE": "Magicians",
+      "PURPLE": "Time Travelers"
+    },
+    "power_names": {
+      "RED": "Hot Potato!",
+      "ORANGE": "Dib It!",
+      "YELLOW": "Re-Tinker!",
+      "GREEN": "I Foresaw This!",
+      "BLUE_LOW": "Sleight of Paw",
+      "BLUE_HIGH": "VANISH!",
+      "PURPLE": "Time Warp"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "game_rules": {
+    "num_players": 4,
+    "hand_size": 8,
+    "vp_target": 60,
+    "max_rounds": 20,
+    "max_tricks_per_round": 50,
+
+    "deck": {
+      "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+      "faction_names": {
+        "RED": "Super-Dupes",
+        "ORANGE": "Finders-Keepers",
+        "YELLOW": "Tinkerers",
+        "GREEN": "Prognosticationers",
+        "BLUE": "Magicians",
+        "PURPLE": "Time Travelers"
+      },
+      "min_rank": 0,
+      "max_rank": 10,
+      "total_cards": 66
+    },
+
+    "alliance_dial": {
+      "positions": ["CROSS", "LEFT", "RIGHT"],
+      "starting_position": "CROSS",
+      "rotation": "clockwise",
+      "multipliers": {
+        "CROSS": 1,
+        "LEFT": 1,
+        "RIGHT": 2
+      },
+      "low_wins": ["RIGHT"],
+      "high_wins": ["CROSS", "LEFT"]
+    },
+
+    "council_balance": {
+      "safety_cap": 5,
+      "description": "Reveal cards until 2 different factions appear. First = Trump, second = Elite. Discard revealed cards."
+    },
+
+    "castles_blessing": {
+      "enabled": true,
+      "skip_round_1": true,
+      "last_place_draw": 3,
+      "second_to_last_draw": 2,
+      "keep_count": 8,
+      "description": "Trailing players draw extra cards and keep the best 8."
+    },
+
+    "intern_rule": {
+      "rank": 0,
+      "draw_count": 1,
+      "description": "Playing a rank 0 card draws 1 card from the Vault immediately."
+    },
+
+    "scoring": {
+      "base_cards_per_trick": 4,
+      "quick_fix_extra_cards": 1,
+      "vp_compression": true,
+      "vp_compression_description": "Leader scores x1 on RIGHT instead of x2. Reduces snowball.",
+      "description": "VP = cards_in_trick * dial_multiplier. Winner scores immediately."
+    },
+
+    "talents": {
+      "enabled": true,
+      "all_ranks_eligible": true,
+      "description": "Faction talents trigger when you win a trick with that faction's card. All optional.",
+      "talent_list": {
+        "RED": {
+          "name": "Rally the Dupes",
+          "effect": "Rotate dial back one position (counter-clockwise). Net: dial stays where it was."
+        },
+        "ORANGE": {
+          "name": "Finders Keepers",
+          "effect": "Swap 1 hand card with any 1 card from the Crate."
+        },
+        "YELLOW": {
+          "name": "Quick Fix",
+          "effect": "Lead next trick with 2 cards of same faction (5-card trick)."
+        },
+        "GREEN": {
+          "name": "Saw It Coming",
+          "effect": "Peek top 3 of Vault, keep 1, reorder remaining 2."
+        },
+        "BLUE": {
+          "name": "Sleight of Paw",
+          "effect": "Choose 2 opponents; they each swap 1 random card with each other."
+        },
+        "PURPLE": {
+          "name": "Pocket the Past",
+          "effect": "Bank 1 card from hand to score 1 VP. Draw 1. Discard 1."
+        }
+      }
+    },
+
+    "new_round": {
+      "dealer_rule": "lowest_vp",
+      "reset_dial": true,
+      "reset_dial_to": "CROSS",
+      "description": "Reshuffle all cards, reset dial, lowest VP is new dealer."
+    }
+  },
+
+  "tuning_notes": {
+    "vp_target_range": "50-70. Current 60 produces median 5 rounds.",
+    "right_multiplier_range": "1.5-3. Current 2 gives ~39% of VP from RIGHT tricks.",
+    "blessing_draw_range": "1-4. Current 3/2 improves last-place win rate by ~3pp."
+  }
+}

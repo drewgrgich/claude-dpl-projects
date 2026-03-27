@@ -1,0 +1,231 @@
+{
+  "num_games": 100,
+  "num_players": 3,
+  "game_length": {
+    "mean": 71.6,
+    "min": 39,
+    "max": 200,
+    "median": 66,
+    "aborted": 4
+  },
+  "wins": {
+    "0": 45,
+    "1": 35,
+    "2": 20
+  },
+  "win_rates": {
+    "0": 0.45,
+    "1": 0.35,
+    "2": 0.2
+  },
+  "vp_averages": {
+    "0": {
+      "total": 27.12,
+      "event": 26.91,
+      "playbook": 0.0,
+      "events_completed": 4.27
+    },
+    "1": {
+      "total": 25.0,
+      "event": 24.7,
+      "playbook": 0.0,
+      "events_completed": 4.04
+    },
+    "2": {
+      "total": 22.89,
+      "event": 22.77,
+      "playbook": 0.0,
+      "events_completed": 3.71
+    }
+  },
+  "action_distribution": {
+    "0": {
+      "recruit_lineup": 18.98,
+      "complete_event": 4.27,
+      "wipe_jumbotron": 0.63
+    },
+    "1": {
+      "recruit_lineup": 18.99,
+      "wipe_jumbotron": 0.85,
+      "complete_event": 4.04
+    },
+    "2": {
+      "recruit_lineup": 19.3,
+      "complete_event": 3.71,
+      "wipe_jumbotron": 0.83
+    }
+  },
+  "events_by_tier": {
+    "1": {
+      "total": 292,
+      "per_game": 2.92
+    },
+    "2": {
+      "total": 318,
+      "per_game": 3.18
+    },
+    "3": {
+      "total": 351,
+      "per_game": 3.51
+    },
+    "4": {
+      "total": 81,
+      "per_game": 0.81
+    },
+    "5": {
+      "total": 32,
+      "per_game": 0.32
+    },
+    "6": {
+      "total": 128,
+      "per_game": 1.28
+    }
+  },
+  "most_completed_events": [
+    [
+      "Substitution",
+      71
+    ],
+    [
+      "Rivalry Week",
+      68
+    ],
+    [
+      "Opening Ceremony",
+      64
+    ],
+    [
+      "Synchronized Swimming",
+      63
+    ],
+    [
+      "Photo Finish",
+      60
+    ],
+    [
+      "Convoy",
+      59
+    ],
+    [
+      "Capture the Flag",
+      58
+    ],
+    [
+      "Guessing Booth",
+      56
+    ],
+    [
+      "Shell Game",
+      54
+    ],
+    [
+      "Drag Race",
+      53
+    ]
+  ],
+  "least_completed_events": [
+    [
+      "Sprinkler Ambush",
+      12
+    ],
+    [
+      "Strategy Meeting",
+      11
+    ],
+    [
+      "Secret Playbook",
+      9
+    ],
+    [
+      "New Rules!",
+      9
+    ],
+    [
+      "Shield Wall",
+      5
+    ],
+    [
+      "Fantasy League",
+      4
+    ],
+    [
+      "Pit Stop",
+      3
+    ],
+    [
+      "Trophy Case",
+      3
+    ],
+    [
+      "Halftime Show",
+      2
+    ],
+    [
+      "Instant Replay",
+      1
+    ]
+  ],
+  "never_completed_events": [],
+  "wipes": {
+    "total": 231,
+    "per_game": 2.31,
+    "games_with_wipe": 100,
+    "max_in_game": 4
+  },
+  "stagnation": {
+    "avg_stagnation_turns": 46.42,
+    "avg_max_streak": 21.09,
+    "worst_streak": 166
+  },
+  "first_event_turn": {
+    "mean": 2.75,
+    "min": 0,
+    "max": 11
+  },
+  "lineup_draft_slots": {
+    "2": 361,
+    "0": 4609,
+    "1": 622,
+    "3": 135
+  },
+  "standing_ovation_rate": 0.96,
+  "all_event_completions": {
+    "Scavenger Hunt": 50,
+    "Rivalry Week": 68,
+    "Drag Race": 53,
+    "Shell Game": 54,
+    "Tug of War": 41,
+    "Secret Playbook": 9,
+    "Substitution": 71,
+    "Guessing Booth": 56,
+    "Opening Ceremony": 64,
+    "Photo Finish": 60,
+    "Sudden Death": 48,
+    "Time Capsule": 15,
+    "Capture the Flag": 58,
+    "Convoy": 59,
+    "Red Light Green Light": 45,
+    "Wheelbarrow Race": 45,
+    "Hide and Seek": 48,
+    "Disappearing Act": 16,
+    "Synchronized Swimming": 63,
+    "Easter Egg Hunt": 43,
+    "Marathon": 32,
+    "Great Scavenge": 12,
+    "Obstacle Course": 49,
+    "Limbo Contest": 34,
+    "Pit Stop": 3,
+    "Halftime Show": 2,
+    "New Rules!": 9,
+    "The Final Limbo": 14,
+    "Soapbox Derby": 13,
+    "Strategy Meeting": 11,
+    "Fantasy League": 4,
+    "Shield Wall": 5,
+    "Group Photo": 18,
+    "King of the Hill": 14,
+    "Sprinkler Ambush": 12,
+    "Trophy Case": 3,
+    "Instant Replay": 1
+  }
+}

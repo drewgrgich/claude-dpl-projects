@@ -1,0 +1,37 @@
+{
+  "deck": {
+    "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+    "min_rank": 0,
+    "max_rank": 10,
+    "wild_ranks": [0, 10]
+  },
+  "setup": {
+    "starting_hand_size": 7,
+    "asymmetric_hands": false,
+    "hand_size_per_seat": [7, 7, 7, 7]
+  },
+  "draw": {
+    "snack_floor_threshold": 2,
+    "snack_floor_draw_count": 3,
+    "standard_draw_count": 1,
+    "stale_snack_rule": true,
+    "scavenge_enabled": false,
+    "scavenge_draw": 2
+  },
+  "banking": {
+    "min_set_size": 3
+  },
+  "scoring": {
+    "wild_hand_penalty": 10,
+    "wild_bank_value_override": null,
+    "red_protection_bonus": 0
+  },
+  "faction_variants": {
+    "green_peek_count": 3,
+    "green_take_one": false,
+    "orange_requires_discard": false
+  },
+  "game": {
+    "max_turns": 200
+  }
+}

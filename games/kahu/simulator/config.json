@@ -1,0 +1,36 @@
+{
+  "game_rules": {
+    "hand_size": 5,
+    "starting_deck_size": 11,
+    "market_size": 5,
+    "market_discount_slot": 4,
+    "market_discount": 1,
+    "surf_cost": 2,
+    "surf_supply": 10,
+    "tiki_count": 4,
+    "tiki_pua_cost": {"Red": 1, "Blue": 1, "Yellow": 1},
+    "offerings_active": 4,
+    "offerings_total": 8,
+    "vp_tokens_per_offering": [4, 3, 2, 1],
+    "endgame_vp_token_count": 3,
+    "pua_supply_per_color": 11,
+    "pua_starting_prices": [3, 4, 5],
+    "max_turns": 200,
+    "lava_start": {
+      "2_player": 16,
+      "3_player": 20,
+      "4_player": 22
+    },
+    "escalation_events": {
+      "15": "second_lava",
+      "12": "tiki_lockout",
+      "10": "market_wipe_shrink",
+      "7": "pua_price_increase",
+      "5": "market_wipe"
+    },
+    "pua_price_range": {
+      "normal": [3, 4, 5],
+      "increased": [4, 5, 6]
+    }
+  }
+}

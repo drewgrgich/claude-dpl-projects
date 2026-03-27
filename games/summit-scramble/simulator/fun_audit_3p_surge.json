@@ -1,0 +1,59 @@
+{
+  "num_games": 500,
+  "num_players": 3,
+  "decision_density": {
+    "avg_meaningful_choices": 2.256858041958039,
+    "pct_turns_with_2plus_choices": 0.7837011211011208
+  },
+  "comeback": {
+    "comeback_rate": 0.668,
+    "avg_lead_changes": 2.322,
+    "last_to_top2_rate": 0.544
+  },
+  "dead_turns": {
+    "avg_dead_turn_rate": 0.0,
+    "max_dead_turn_rate": 0.0,
+    "pct_games_with_zero_dead": 1.0
+  },
+  "blowout": {
+    "avg_winner_margin": 4.0,
+    "blowout_rate": 0.116,
+    "close_game_rate": 0.504,
+    "avg_max_remaining": 2.372
+  },
+  "tension_curve": {
+    "third_1_pct": 0.25948930296756384,
+    "third_2_pct": 0.4125998225377107,
+    "third_3_pct": 0.32791087449472545,
+    "ascending": false,
+    "final_third_pct": 0.32791087449472545
+  },
+  "racing_tension": {
+    "avg_late_game_spread": 3.7029293650793664,
+    "avg_photo_finish_rate": 0.527672222222222,
+    "avg_near_finish_turns": 3.132,
+    "pct_games_with_photo_finish": 0.896
+  },
+  "power_fantasy": {
+    "avg_wow_turns_per_game": 6.626,
+    "pct_games_with_wow": 1.0,
+    "avg_wow_rate": 0.22548436379467732
+  },
+  "interaction": {
+    "avg_interactions_per_game": 3.068,
+    "avg_interaction_rate": 0.10040270600237919,
+    "pct_games_with_interaction": 0.96
+  },
+  "grades": {
+    "decision_density": "B",
+    "comeback": "A",
+    "dead_turns": "A",
+    "blowout": "C",
+    "tension_curve": "C",
+    "racing_tension": "B",
+    "power_fantasy": "A",
+    "interaction": "B",
+    "overall": "B",
+    "overall_score": 3.29
+  }
+}

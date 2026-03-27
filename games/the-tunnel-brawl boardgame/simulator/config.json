@@ -1,0 +1,90 @@
+{
+  "game_rules": {
+    "victory_threshold": {
+      "2_player": 20,
+      "3_player": 15,
+      "4_player": 15,
+      "5_player": 15
+    },
+    "starting_hand_size": {
+      "2_player": 6,
+      "3_player": 8,
+      "4_player": 6,
+      "5_player": 6
+    },
+    "hand_limit": {
+      "2_player": 6,
+      "3_player": 8,
+      "4_player": 6,
+      "5_player": 6
+    },
+    "draw_per_turn": 2,
+    "defender_draw_per_turn": 3,
+    "clash_base_reward": 2,
+    "normal_win_reward": 1,
+    "wild_surge_draw": 1,
+    "fixed_rounds": {
+      "2_player": 10
+    },
+    "underdog_draw_bonus": 1,
+    "max_rounds": 50,
+    "victory_tokens_per_player": 12,
+    "purple_return_vp_cost": 0,
+    "purple_return_to_deck": true,
+    "wild_strict_mode": true,
+    "domination_rank_diff": 0,
+    "domination_bonus_vp": 0,
+    "power_play_min_rank": 7,
+    "power_play_bonus_vp": 1,
+    "double_talent_enabled": true
+  },
+  "factions": {
+    "RED": {"name": "Red", "emoji": "R", "talent": "Coming Through!"},
+    "ORANGE": {"name": "Orange", "emoji": "O", "talent": "Dropped Your Snack!"},
+    "YELLOW": {"name": "Yellow", "emoji": "Y", "talent": "Slippery!"},
+    "GREEN": {"name": "Green", "emoji": "G", "talent": "Saw You Looking!"},
+    "BLUE": {"name": "Blue", "emoji": "B", "talent": "Spin Move!"},
+    "PURPLE": {"name": "Purple", "emoji": "P", "talent": "Let's Try That Again"}
+  },
+  "deck": {
+    "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+    "ranks": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "wild_ranks": [0, 10]
+  },
+  "talents": {
+    "RED": {
+      "description": "Force loser to discard 1 random card, draw 1 replacement",
+      "doubled": "Force loser to discard 2 random cards, draw 2 replacements"
+    },
+    "ORANGE": {
+      "description": "Take top card of discard pile. If Wild, draw extra card",
+      "doubled": "Take top 2 cards of discard pile"
+    },
+    "YELLOW": {
+      "description": "Draw 2 cards from deck",
+      "doubled": "Draw 4 cards from deck"
+    },
+    "GREEN": {
+      "description": "Look at one opponent's hand, force them to play a chosen card next turn",
+      "doubled": "Look at two opponents' hands, force each to play a chosen card"
+    },
+    "BLUE": {
+      "description": "All players pass 1 random card left",
+      "doubled": "All players pass 2 random cards left"
+    },
+    "PURPLE": {
+      "description": "Return one winning card to hand (keep VP)",
+      "doubled": "Return two winning cards to hand"
+    }
+  },
+  "two_player": {
+    "sequential_deployment": true,
+    "description": "Home cards revealed first, then Away cards placed with knowledge"
+  },
+  "three_player": {
+    "defender_rotation": true,
+    "defender_wins_ties": true,
+    "defender_needs_both_wins_for_talent": true,
+    "attacker_needs_one_win_for_talent": true
+  }
+}

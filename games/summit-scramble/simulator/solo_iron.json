@@ -1,0 +1,25 @@
+{
+  "num_games": 1000,
+  "iron_climb": true,
+  "win_rate": 0.493,
+  "wins": 493,
+  "losses": 507,
+  "avg_turns": 25.62,
+  "min_turns": 3,
+  "max_turns": 500,
+  "avg_cards_remaining_on_loss": 3.1400394477317555,
+  "max_cards_remaining_on_loss": 8,
+  "avg_trip_ups": 0.835,
+  "games_with_trip_up": 62.3,
+  "avg_strategic_conserves": 1.048,
+  "avg_tricks_player": 1.276,
+  "avg_tricks_owls": 2.192,
+  "ability_usage": {
+    "recalibrate": 78,
+    "reclaim": 51,
+    "revelation": 59,
+    "rotation": 125,
+    "scout": 52,
+    "streamline": 64
+  }
+}

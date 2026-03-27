@@ -1,0 +1,44 @@
+{
+  "num_games": 500,
+  "num_players": 3,
+  "avg_turns_per_game": 16.712,
+  "bust_rate": 0.49777777777777776,
+  "decision_density": {
+    "avg_categories": 2.380022679421316,
+    "pct_2plus": 0.9996969696969698
+  },
+  "comeback": {
+    "comeback_rate": 0.478,
+    "avg_lead_changes": 3.014
+  },
+  "dead_turns": {
+    "avg_rate": 0.08787491456854177,
+    "max_rate": 0.5757575757575758
+  },
+  "blowout": {
+    "avg_margin": 7.028,
+    "blowout_rate_2x": 0.816,
+    "close_game_rate": 0.358
+  },
+  "tension": {
+    "round_vp_avgs": [
+      2.6026666666666673,
+      2.7946666666666666,
+      2.550666666666665
+    ],
+    "final_round_pct": 0.3209193088407984,
+    "ascending_pct": 0.308
+  },
+  "power_fantasy": {
+    "avg_wow_per_game": 7.472,
+    "pct_games_with_wow": 1.0,
+    "avg_chain_size": 4.964786716289722,
+    "max_chain": 6,
+    "big_chain_pct": 0.7789865445176066
+  },
+  "interaction": {
+    "avg_per_game": 7.54,
+    "avg_rate_per_turn": 0.46677412116154915,
+    "pct_games_with": 1.0
+  }
+}

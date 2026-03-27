@@ -1,0 +1,155 @@
+{
+  "num_games": 2000,
+  "wins": {
+    "0": 929,
+    "1": 855
+  },
+  "ties": 216,
+  "win_rates": {
+    "0": 0.4645,
+    "1": 0.4275
+  },
+  "tie_rate": 0.108,
+  "avg_turns": 36.0,
+  "min_turns": 36,
+  "max_turns": 36,
+  "aborted": 0,
+  "abort_rate": 0.0,
+  "avg_vp": {
+    "0": 7.591,
+    "1": 7.335
+  },
+  "vp_std": {
+    "0": 2.1662684505850174,
+    "1": 2.1844392873229532
+  },
+  "action_totals": {
+    "0": {
+      "play_monster": 33149,
+      "fumble": 2604,
+      "bench": 247
+    },
+    "1": {
+      "play_monster": 32848,
+      "fumble": 2825,
+      "bench": 327
+    }
+  },
+  "signature_totals": {
+    "0": {
+      "sig_green": 668,
+      "sig_yellow": 567,
+      "sig_purple": 376,
+      "sig_blue": 291,
+      "sig_red": 127
+    },
+    "1": {
+      "sig_purple": 580,
+      "sig_yellow": 716,
+      "sig_green": 881,
+      "sig_red": 149,
+      "sig_blue": 175
+    }
+  },
+  "arenas_won_total": {
+    "0": 10656,
+    "1": 10459
+  },
+  "avg_arenas_won": {
+    "0": 5.328,
+    "1": 5.2295
+  },
+  "roar_triggers": {
+    "0": 2342,
+    "1": 2377
+  },
+  "fumble_total": {
+    "1": 2825,
+    "0": 2604
+  },
+  "avg_fumbles": {
+    "0": 1.302,
+    "1": 1.4125
+  },
+  "bench_total": {
+    "1": 327,
+    "0": 247
+  },
+  "avg_benches": {
+    "0": 0.1235,
+    "1": 0.1635
+  },
+  "chameleon_total": {
+    "0": 7257,
+    "1": 7327
+  },
+  "avg_chameleons": {
+    "0": 3.6285,
+    "1": 3.6635
+  },
+  "trophy_total": {
+    "0": 551,
+    "1": 344
+  },
+  "avg_stagnation": 3.0015,
+  "max_stagnation_streak": 8,
+  "avg_max_stagnation": 1.4925,
+  "faction_pair_performance": {
+    "('BLUE', 'YELLOW')": {
+      "win_rate": 0.33489461358313816,
+      "games": 427
+    },
+    "('ORANGE', 'PURPLE')": {
+      "win_rate": 0.4332552693208431,
+      "games": 427
+    },
+    "('GREEN', 'ORANGE')": {
+      "win_rate": 0.5788235294117647,
+      "games": 425
+    },
+    "('BLUE', 'RED')": {
+      "win_rate": 0.43498817966903075,
+      "games": 423
+    },
+    "('ORANGE', 'YELLOW')": {
+      "win_rate": 0.44525547445255476,
+      "games": 411
+    },
+    "('ORANGE', 'RED')": {
+      "win_rate": 0.6044776119402985,
+      "games": 402
+    },
+    "('BLUE', 'PURPLE')": {
+      "win_rate": 0.2904040404040404,
+      "games": 396
+    },
+    "('BLUE', 'GREEN')": {
+      "win_rate": 0.4506329113924051,
+      "games": 395
+    },
+    "('RED', 'YELLOW')": {
+      "win_rate": 0.4603174603174603,
+      "games": 126
+    },
+    "('PURPLE', 'RED')": {
+      "win_rate": 0.46774193548387094,
+      "games": 124
+    },
+    "('GREEN', 'PURPLE')": {
+      "win_rate": 0.38333333333333336,
+      "games": 120
+    },
+    "('PURPLE', 'YELLOW')": {
+      "win_rate": 0.20175438596491227,
+      "games": 114
+    },
+    "('GREEN', 'YELLOW')": {
+      "win_rate": 0.5283018867924528,
+      "games": 106
+    },
+    "('GREEN', 'RED')": {
+      "win_rate": 0.6346153846153846,
+      "games": 104
+    }
+  }
+}

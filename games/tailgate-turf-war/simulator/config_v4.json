@@ -1,0 +1,75 @@
+{
+  "game_rules": {
+    "num_rounds": 4,
+    "vp_per_zone": 5,
+    "num_zones": 4,
+    "colors": ["RED", "YELLOW", "GREEN", "BLUE"],
+    "ranks": [0, 0, 1, 1, 3, 5, 7, 9, 9, 10, 10],
+    "strength": {
+      "extra_card_bonus": 2,
+      "home_field_bonus": 3
+    },
+    "mascot": {
+      "doubles_best": true,
+      "counts_as_extra_card": false,
+      "can_anchor_home_field": false
+    },
+    "dud_rank": 5,
+    "hand_sizes": {
+      "2_player": 24,
+      "3_player": 16,
+      "4_player": 12,
+      "5_player": 9
+    },
+    "pass_count": {
+      "2_player": 4,
+      "3_player": 3,
+      "4_player": 2,
+      "5_player": 2
+    },
+    "min_cards_per_round": {
+      "2_player": 3,
+      "3_player": 3,
+      "4_player": 3,
+      "5_player": 2
+    },
+    "second_place_vp": 1,
+    "action_cards": {
+      "shield": {
+        "resolution_order": 1,
+        "color": "RED",
+        "consolation_vp": 2,
+        "description": "Protects stack from other actions. Score 2 VP even if you lose."
+      },
+      "bomb": {
+        "resolution_order": 2,
+        "color": "YELLOW",
+        "description": "Destroys highest-ranked number card at this zone (across unshielded players)."
+      },
+      "swap": {
+        "resolution_order": 3,
+        "color": "GREEN",
+        "description": "Exchange one of your number cards here with one of yours at any other zone."
+      },
+      "bounty": {
+        "resolution_order": 4,
+        "color": "BLUE",
+        "description": "Win = double VP. Lose or tie = 0 VP (overrides Shield)."
+      }
+    },
+    "condition_cards": [
+      {"name": "Naturals Only", "category": "card_restriction", "effect": "no_mascots"},
+      {"name": "Rainbow", "category": "card_restriction", "effect": "unique_colors_per_zone"},
+      {"name": "Light Touch", "category": "card_restriction", "effect": "max_cards_4"},
+      {"name": "All In", "category": "placement", "effect": "max_2_zones"},
+      {"name": "Spread Out", "category": "placement", "effect": "min_2_zones"},
+      {"name": "Inversion", "category": "scoring", "effect": "lowest_wins"},
+      {"name": "Double Stakes", "category": "scoring", "effect": "double_vp"},
+      {"name": "Neutral Ground", "category": "scoring", "effect": "no_home_field"},
+      {"name": "Sudden Death", "category": "scoring", "effect": "ties_lose"},
+      {"name": "Efficiency", "category": "scoring", "effect": "fewer_cards_wins_ties"},
+      {"name": "Lone Wolf", "category": "scoring", "effect": "lone_wolf_bonus"},
+      {"name": "Fortify", "category": "scoring", "effect": "big_stack_bonus"}
+    ]
+  }
+}

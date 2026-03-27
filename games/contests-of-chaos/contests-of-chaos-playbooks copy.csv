@@ -1,0 +1,25 @@
+Category,Playbook,VP,Trigger,Timing,Flavor
+Composition,The Rookie,3,Complete an Event using only Ranks 1-5,Combo,Who needs experience when you have enthusiasm?
+Composition,The Speed Run,3,Complete an Event using 3 or fewer cards,Combo,Why use six when two will do? In and out before they know what hit them.
+Market Access,The Walk-On,3,"On your turn, you may Recruit from Lineup Slot 1 and then Complete an Event using that Recruit",Combo,Nobody wanted this event. You saw what they didn't. That's why you're the coach.
+Resources,The Salary Cap,3,End of turn: Have exactly 0 Shinies,Finish,We're broke. You'll have to win this one with heart kid.
+Resources,The Windfall,3,End of turn: Have 8+ Shinies.,Finish,We don't need a plan. We need a VAULT.
+Comeback,The Underdog Story,4,Complete an Event while you have 2+ fewer completed Events than the leader,Combo,The audience loves a loser. Let's give them a show.
+Composition,The Perfect 10,4,Complete an Event using at least one Rank 10 card,Combo,The veterans show up when it matters.
+Composition,The Big Game,4,Complete an Event worth 9 VP or more,Combo,Championships aren't won in the practice squad.
+Composition,Goldilocks,4,Complete an Event using exactly 4 cards,Combo,"Not too many, not too few. Just enough to keep them guessing."
+Market Access,The Transfer,4,"On your turn, you may Recruit from Lineup Slot 2 (paying its Slot Price) and then Complete an Event using that Recruit",Combo,Half the roster is mercenaries. The other half doesn't ask questions.
+Composition,The Precision,4,Complete an Event with any Sum requirement.,Combo,Not approximately. Exactly. Champions live in the margins.
+Drafting,The Scavenger,4,Draft a card from the Lineup that has 3+ Shinies sitting on it.,Combo,One coach's leftovers are another coach's feast.
+Resources,Leave It On The Field,4,End of turn: 2 or fewer cards in hand and you completed an Event this turn.,Finish,If you can still walk you didn't play hard enough.
+Drafting,The High Roller,4,Recruit a card from Lineup Slot 4 (rightmost),Immediate,Go big or go home. The expensive seats have the best view.
+Board Control,The Gatekeeper,4,Use a Timeout to flush a Jumbotron event worth 8+ VP.,Combo,"That event looked fun. Shame it's gone. Anyway, here's a cookie."
+Composition,The Full Court Press,5,Complete an Event from a hand of 7+ cards,Combo,Why throw two when you can throw eight? Overwhelm the defense.
+Market Access,The Ringer,5,"On your turn, you may Recruit from Lineup Slot 3 or 4 (paying its Slot Price) and then Complete an Event using that Recruit",Combo,Fresh on the board. Gone before anyone blinked. That's a statement.
+Mastery,The Franchise Player,5,Complete an Event using only cards from a single faction with no Free Agents,Combo,Strength isn't diverse. Strength is redundant.
+Resources,The Sponsorship Deal,5,When completing an Event: pay 5 Shinies immediately after scoring,Combo,Brought to you by Sludge-O-Cola. Taste the Chrome!
+Disruption,The Curveball,5,Complete an event whose reward causes an opponent to lose a card or Shiny.,Combo,"Nothing personal, Coach. Well . . . maybe a little of it was personal."
+Comeback,The Buzzer Beater,5,End of turn: Leader has 4+ completed Events and you are not the leader.,Finish,It's not a comeback unless you wait until the last second.
+Endgame,The Marathon Runner,5,Complete your 4th event.,Combo,First one's luck. Second one's skill. Third one's habit. Fourth one's legacy.
+Composition,The Knockout,6,Complete Photo Finish or Sudden Death,Combo,The whole stadium went quiet. Then it didn't.
+Endgame,The Hail Mary,6,Complete your 5th Event with 2 or fewer cards in hand after scoring,Combo,Clock's ticking. Close your eyes and throw.

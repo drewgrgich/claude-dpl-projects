@@ -1,0 +1,83 @@
+,Card Name,Icon,Cost,Card Type,Influence,VP,Card Effect
+1,Orchid,Wild,3,Flower,2,0,Reval the top card of your deck you may return it to the top or bottom of your draw deck
+1,Orchid,Wild,3,Flower,2,0,Reval the top card of your deck you may return it to the top or bottom of your draw deck
+1,Orchid,Wild,3,Flower,2,0,Reval the top card of your deck you may return it to the top or bottom of your draw deck
+1,Pua Kalaunu,Wild,3,Flower,2,0,Reval the top card of your draw pile. You may discard it or remove it from the game
+1,Pua Kalaunu,Wild,3,Flower,2,0,Reval the top card of your draw pile. You may discard it or remove it from the game
+1,Pua Kalaunu,Wild,3,Flower,2,0,Reval the top card of your draw pile. You may discard it or remove it from the game
+1,Plumeria,Yellow,3,Flower,1,0,You may put any one card you purchase this turn on the top of your deck
+1,Plumeria,Red,3,Flower,1,0,You may put any one card you purchase this turn on the top of your deck
+1,Plumeria,Blue,3,Flower,1,0,You may put any one card you purchase this turn on the top of your deck
+1,Ginger,Yellow,3,Flower,1,0,You may put an FLOWER card from your discard pile into your hand
+1,Ginger,Red,3,Flower,1,0,You may put an FLOWER card from your discard pile into your hand
+1,Ginger,Blue,3,Flower,1,0,You may put an FLOWER card from your discard pile into your hand
+1,Bird of Paradise,Yellow,3,Flower,1,0,You may put an WILDLIFE card from your discard pile into your hand
+1,Bird of Paradise,Red,3,Flower,1,0,You may put an WILDLIFE card from your discard pile into your hand
+1,Bird of Paradise,Blue,3,Flower,1,0,You may put an WILDLIFE card from your discard pile into your hand
+1,Hibiscus,Yellow,3,Flower,1,0,You may put an ITEM card from your discard pile into your hand
+1,Hibiscus,Red,3,Flower,1,0,You may put an ITEM card from your discard pile into your hand
+1,Hibiscus,Blue,3,Flower,1,0,You may put an ITEM card from your discard pile into your hand
+1,Pineapple,,3,ITEM,2,2,Discard this card to draw 2 cards you may keep or discard cards gained this way
+1,Pineapple,,3,ITEM,2,2,Discard this card to draw 2 cards you may keep or discard cards gained this way
+1,Ukulele,,3,ITEM,2,2,You may put any 2 cards from your discard pile on the bottom of your draw deck
+1,Ukulele,,3,ITEM,2,2,You may put any 2 cards from your discard pile on the bottom of your draw deck
+1,Surfboard,,4,ITEM,2,2,If played with a surf card this cards value is 5
+1,Surfboard,,4,ITEM,2,2,If played with a surf card this cards value is 5
+1,Sugar Cane,,3,ITEM,2,2,Discard 4 cards to draw 4 cards
+1,Sugar Cane,,3,ITEM,2,2,Discard 4 cards to draw 4 cards
+1,Sea Shell,,3,ITEM,2,2,You may remove a card from your hand or discard pile from the game
+1,Sea Shell,,3,ITEM,2,2,You may remove a card from your hand or discard pile from the game
+1,Lei,,3,ITEM,2,2,If you have played an ISLANDER card this cards value is 3
+1,Lei,,3,ITEM,2,2,If you have played an ISLANDER card this cards value is 3
+1,Outrigger,,5,ITEM,1,2,"Draw three cards, discard one"
+1,Outrigger,,5,ITEM,1,2,"Draw three cards, discard one"
+1,Grass Hut,,4,ITEM,3,2,If played with a ISLANDER card this cards value is 5
+1,Grass Hut,,4,ITEM,3,2,If played with a ISLANDER card this cards value is 5
+1,Plate Lunch,,3,ITEM,2,2,If played with a ISLANDER card gain a pua of your choice
+1,Plate Lunch,,3,ITEM,2,2,If played with a ISLANDER card gain a pua of your choice
+1,Sea Turtle,,2,WILDLIFE,2,2,"You may look at the top card of your deck if it is a Flower card you may add it to your hand, if it is not discard it."
+1,Sea Turtle,,2,WILDLIFE,2,2,"You may look at the top card of your deck if it is a Flower card you may add it to your hand, if it is not discard it."
+1,Sea Turtle,,2,WILDLIFE,2,2,"You may look at the top card of your deck if it is a Flower card you may add it to your hand, if it is not discard it."
+1,Chicken,,3,WILDLIFE,1,2,You may choose any player to reveal and discard the top card of their deck you may play that card as if it was your own
+1,Chicken,,3,WILDLIFE,1,2,You may choose any player to reveal and discard the top card of their deck you may play that card as if it was your own
+1,Chicken,,3,WILDLIFE,1,2,You may choose any player to reveal and discard the top card of their deck you may play that card as if it was your own
+1,Nene Goose,,3,WILDLIFE,1,2,You may play the top card of any single player's discard pile as if it was your own.
+1,Nene Goose,,3,WILDLIFE,1,2,You may play the top card of any single player's discard pile as if it was your own.
+1,Nene Goose,,3,WILDLIFE,1,2,You may play the top card of any single player's discard pile as if it was your own.
+1,Dolphin,,3,WILDLIFE,2,2,You may remove a card from your discard pile from the game
+1,Dolphin,,3,WILDLIFE,2,2,You may remove a card from your discard pile from the game
+1,Dolphin,,3,WILDLIFE,2,2,You may remove a card from your discard pile from the game
+1,Pig,,4,WILDLIFE,2,3,You may exchange any Pua for another colored Pua
+1,Pig,,4,WILDLIFE,2,3,You may exchange any Pua for another colored Pua
+1,Pig,,4,WILDLIFE,2,3,You may exchange any Pua for another colored Pua
+1,Fish,,5,WILDLIFE,4,1,If played with a surf card gain a pua
+1,Fish,,5,WILDLIFE,4,1,If played with a surf card gain a pua
+1,Fish,,5,WILDLIFE,4,1,If played with a surf card gain a pua
+1,Islander,,3,ISLANDER,2,2,If your discard pile is empty this cards value is 4
+1,Islander,,4,ISLANDER,1,2,WILDLIFE cards cost 1 less this turn
+1,Islander,,4,ISLANDER,2,2,If you have a Tiki in play this cards value is 5
+1,Islander,,4,ISLANDER,2,2,You may gain a Surf card from the market
+1,Islander,,5,ISLANDER,0,1,Choose a card you already played this turn and play it again.
+1,Islander,,5,ISLANDER,0,1,Gain any ITEM card from the market
+1,Islander,,5,ISLANDER,1,2,Draw two cards
+1,Islander,,5,ISLANDER,0,1,Gain Red Pua
+1,Islander,,5,ISLANDER,0,1,Gain Blue Pua
+1,Islander,,5,ISLANDER,0,1,Gain Yellow Pua'a
+1,Islander,,6,ISLANDER,2,2,Use any card from the market as if you own it then put it at the bottom of the market pile
+1,Islander,,5,ISLANDER,3,2,If you have played another ISLANDER card this cards value is 5
+1,Islander,,5,ISLANDER,3,3,When you purchase this card you may put it on top of your draw pile
+1,Islander,,6,ISLANDER,0,1,Gain any Flower card from the market
+1,Islander,,5,ISLANDER,3,2,"If played with a SURF card, this cards value is 5"
+1,Islander,,5,ISLANDER,0,1,You may add the top card of your discard pile to your hand
+1,Islander,,5,ISLANDER,0,1,"Choose another player, both of you may draw a card"
+1,Islander,,5,ISLANDER,0,1,"Choose another player, both of you may gain the same colored pua of your choice"
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,
+1,Surf,,2,Surf,2,0,

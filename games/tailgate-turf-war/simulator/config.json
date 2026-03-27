@@ -1,0 +1,62 @@
+{
+  "game_rules": {
+    "num_rounds": 3,
+    "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+    "ranks_per_faction": 11,
+    "rank_range": [0, 10],
+    "total_cards": 66,
+    "zone_cards": 6,
+    "deck_cards": 60,
+
+    "hand_sizes": {
+      "2_player": 18,
+      "3_player": 15,
+      "4_player": 13,
+      "5_player": 11
+    },
+
+    "zone_vp_by_round": [3, 5, 7],
+
+    "hype_multipliers": {
+      "1": 1.0,
+      "2": 0.8,
+      "3": 0.6,
+      "4+": 0.5
+    },
+
+    "superstar_rank": 10,
+    "superstar_hype": 12,
+    "mascot_rank": 0,
+    "crew_bonus": 2,
+    "yellow_crew_bonus": 4,
+
+    "min_hype_threshold": 0,
+
+    "bonuses": {
+      "underdog_vp": 2,
+      "sweep_threshold": 3,
+      "sweep_vp": 3,
+      "diehard_fan_vp": 5,
+      "green_taunt_vp": 1
+    },
+
+    "mishaps": {
+      "red_bonus": 2,
+      "yellow_enhanced_crew": 4,
+      "description": {
+        "RED": "Aggressive Grilling: Red natural cards gain +2 base value",
+        "ORANGE": "Cooler Scavenger: Claim lowest-value opponent card as Crew",
+        "YELLOW": "Premature Face-Painting: Yellow Crew cards provide +4 instead of +2",
+        "GREEN": "Weather Report: Resolved in Phase 1 via taunt",
+        "BLUE": "Sleight of Paw: Swap Blue card value with opponent natural card",
+        "PURPLE": "The Extra Lap: Return Purple card to hand, must play face-up next round"
+      }
+    }
+  },
+
+  "ai_defaults": {
+    "skill": 1.0,
+    "style": "balanced",
+    "aggression": 0.5
+  }
+}

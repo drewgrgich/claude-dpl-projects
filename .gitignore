@@ -1,0 +1,29 @@
+# Broken/sync-failed folder (iCloud conflicts)
+games/network-nomads-board-game/
+
+# Lock files
+**/*.lock
+**/.~lock.*
+
+# Simulation files (generated, machine-specific)
+**/__pycache__/
+**/*.pyc
+**/sim_*.py
+**/iterate_*.py
+**/fun_audit.py
+**/*_sim.py
+**/*_config.json
+**/.DS_Store
+
+# Cloud simulation outputs
+**/monster-mixer/monster_mixer*/
+**/monster-mixer/FUN-AUDIT-RESULTS*.md
+
+# Ignore all game-simulator-skill folders
+**/game-simulator-skill/
+**/games/*/game-simulator-skill/
+
+# Large generated files
+**/*.png
+**/*.jpg
+**/*.mp4

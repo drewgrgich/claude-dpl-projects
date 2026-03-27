@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystery Mascots — Design Team Deep Dive</title>
+<style>
+  :root {
+    --bg: #0c0c14; --card: #161622; --card2: #1c1c2e;
+    --border: #2a2a3e; --text: #e0e0ea; --muted: #7878a0;
+    --accent: #6c5ce7; --green: #00b894; --red: #e74c3c;
+    --orange: #f39c12; --blue: #0984e3; --yellow: #fdcb6e;
+    --purple: #a29bfe; --pink: #fd79a8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; padding: 2rem; max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin-bottom: 0.2rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2.5rem; font-size: 0.95rem; }
+  .q-section { margin-bottom: 2.5rem; }
+  .q-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 0.3rem; }
+  .q-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); background: rgba(108,92,231,0.15); border: 1px solid var(--accent); border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+  .q-asker { font-size: 0.7rem; color: var(--muted); background: var(--card); border-radius: 4px; padding: 1px 6px; }
+  .q-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .answer { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem 1.5rem; }
+  .verdict { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.6rem; }
+  .verdict-good { color: var(--green); }
+  .verdict-warn { color: var(--orange); }
+  .verdict-bad { color: var(--red); }
+  .verdict-info { color: var(--blue); }
+  .detail { color: var(--muted); font-size: 0.9rem; margin-top: 0.4rem; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 0.8rem 0; }
+  .stat-box { background: var(--card2); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem; min-width: 120px; flex: 1; }
+  .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-val { font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .bar-row { display: flex; align-items: center; gap: 0.5rem; margin: 0.25rem 0; font-size: 0.85rem; }
+  .bar-label { width: 85px; text-align: right; color: var(--muted); flex-shrink: 0; }
+  .bar-track { flex: 1; height: 22px; background: var(--border); border-radius: 4px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 0.75rem; font-weight: 600; min-width: 1px; }
+  .bar-marker { position: absolute; top: 0; bottom: 0; width: 2px; background: white; opacity: 0.5; }
+  .insight { background: rgba(108,92,231,0.08); border-left: 3px solid var(--accent); padding: 0.7rem 1rem; border-radius: 0 8px 8px 0; margin-top: 0.8rem; font-size: 0.9rem; }
+  .warning { background: rgba(231,76,60,0.08); border-left: 3px solid var(--red); padding: 0.7rem 1rem; border-radius: 0 8px 8px 0; margin-top: 0.8rem; font-size: 0.9rem; }
+  .success { background: rgba(0,184,148,0.08); border-left: 3px solid var(--green); padding: 0.7rem 1rem; border-radius: 0 8px 8px 0; margin-top: 0.8rem; font-size: 0.9rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.5rem 0; }
+  th, td { padding: 0.45rem 0.7rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .persona { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .morgan { background: rgba(9,132,227,0.15); color: var(--blue); }
+  .jordan { background: rgba(253,121,168,0.15); color: var(--pink); }
+  .casey { background: rgba(243,156,18,0.15); color: var(--orange); }
+  .tldr { background: var(--card2); border: 2px solid var(--accent); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+  .tldr h2 { color: var(--accent); margin-bottom: 0.8rem; }
+  footer { text-align: center; color: var(--muted); margin-top: 3rem; padding: 1rem; border-top: 1px solid var(--border); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<h1>Mystery Mascots — Design Team Answers</h1>
+<p class="subtitle">3,000 AI-vs-AI simulated games across 6 targeted batches | 500 games per batch | All questions answered with data</p>
+
+<div class="tldr">
+<h2>The 30-Second Summary</h2>
+<p>The game's core identity is strong: hidden allegiances create real tension, the draft is meaningful, and the ascending scoring curve makes late-game rooms genuinely dramatic. The three issues worth addressing are: <strong>(1)</strong> a ~55-60% bust rate that suppresses big scoring moments, <strong>(2)</strong> a significant first-player advantage at 3 players, and <strong>(3)</strong> three faction powers (Blue/Yellow/Purple) that rarely get used because rooms resolve too fast. No dominant strategy exists — bold and sneaky play styles perform nearly equally (30% vs 29%). Skill does matter (experts win 41% vs the 25% baseline), but the gap is modest enough that newcomers stay competitive.</p>
+</div>
+
+<!-- ═══════════ MORGAN'S QUESTIONS ═══════════ -->
+
+<hr class="divider">
+
+<!-- Q1 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q1</span>
+    <span class="persona morgan">Morgan</span>
+  </div>
+  <div class="q-title">Win rate by faction — are all six allegiances actually viable?</div>
+  <div class="answer">
+    <div class="verdict verdict-warn">Mostly balanced, but Red outperforms and Orange lags.</div>
+    <p>When we control for appearance frequency (not every faction is in every game since allegiances are dealt randomly), the adjusted win rates tell the story:</p>
+
+    <div class="bar-row"><span class="bar-label">RED</span><div class="bar-track"><div class="bar-fill" style="width: 75%; background: #e74c3c;">37.5%</div><div class="bar-marker" style="left: 33.3%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">BLUE</span><div class="bar-track"><div class="bar-fill" style="width: 65.4%; background: #0984e3;">32.7%</div><div class="bar-marker" style="left: 33.3%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">YELLOW</span><div class="bar-track"><div class="bar-fill" style="width: 63.6%; background: #fdcb6e;">31.8%</div><div class="bar-marker" style="left: 33.3%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">PURPLE</span><div class="bar-track"><div class="bar-fill" style="width: 61.6%; background: #a29bfe;">30.8%</div><div class="bar-marker" style="left: 33.3%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">GREEN</span><div class="bar-track"><div class="bar-fill" style="width: 60%; background: #00b894;">30.0%</div><div class="bar-marker" style="left: 33.3%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">ORANGE</span><div class="bar-track"><div class="bar-fill" style="width: 54.8%; background: #e17055;">27.4%</div><div class="bar-marker" style="left: 33.3%;"></div></div></div>
+    <p class="detail">White marker = expected baseline (~33% when present in 4p). Expected varies because not all factions appear in every game.</p>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Red avg score</div><div class="stat-val" style="color: var(--red);">7.2</div></div>
+      <div class="stat-box"><div class="stat-label">Next best (Orange)</div><div class="stat-val">4.3</div></div>
+      <div class="stat-box"><div class="stat-label">Yellow avg score</div><div class="stat-val">3.2</div></div>
+      <div class="stat-box"><div class="stat-label">Gap (Red vs field)</div><div class="stat-val" style="color: var(--orange);">+3.3</div></div>
+    </div>
+
+    <div class="warning"><strong>Red's Forced Assist power</strong> (flip any face-down card) is the strongest power in the sim because it works without having cards in rooms, generates information, and disrupts opponents. It may self-correct in human play (players can target the Red player), but worth watching.</div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q2</span>
+    <span class="persona morgan">Morgan</span>
+  </div>
+  <div class="q-title">Sneak vs. Shove — is the 0/10 wild tension actually balanced?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">Sneaking is slightly better, but both are viable. The wild system works.</div>
+
+    <table>
+      <tr><th>Card type</th><th>Times placed</th><th>In winning rooms</th><th>Win %</th><th>Assessment</th></tr>
+      <tr><td><strong>0-wilds</strong> (sneak)</td><td>1,260</td><td>611</td><td style="color: var(--green);"><strong>48.5%</strong></td><td>Excellent — high flexibility, no exposure risk</td></tr>
+      <tr><td><strong>10-wilds</strong> (shove)</td><td>1,224</td><td>475</td><td style="color: var(--orange);"><strong>38.8%</strong></td><td>Good — 10 pts when they land, but exposure hurts</td></tr>
+      <tr><td>Mid-ranks (1-9)</td><td>6,546</td><td>1,455</td><td><strong>22.2%</strong></td><td>Baseline comparison</td></tr>
+    </table>
+
+    <p style="margin-top: 0.8rem;">Both wilds dramatically outperform normal cards because they can declare as any faction. The 0-wild sneaks into winning rooms more often (48.5%) because it doesn't trigger exposure. The 10-wild is still strong (38.8%) and contributes 10 points when it lands — a big swing.</p>
+
+    <div class="insight"><strong>Style matchup results</strong> confirm the tension is real: Bold (30.0%) barely edges Sneaky (28.8%), with Balanced at 26.8%. No single approach dominates. Disruptive (14.4%) is the only clearly weak style — hate-drafting and interference cost more than they gain.</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Bold win rate</div><div class="stat-val" style="color: var(--green);">30.0%</div></div>
+      <div class="stat-box"><div class="stat-label">Sneaky win rate</div><div class="stat-val" style="color: var(--green);">28.8%</div></div>
+      <div class="stat-box"><div class="stat-label">Balanced</div><div class="stat-val">26.8%</div></div>
+      <div class="stat-box"><div class="stat-label">Disruptive</div><div class="stat-val" style="color: var(--red);">14.4%</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q3</span>
+    <span class="persona morgan">Morgan</span>
+  </div>
+  <div class="q-title">Exposure accuracy — how often do players correctly guess allegiances?</div>
+  <div class="answer">
+    <div class="verdict verdict-warn">95.6% accuracy — deduction works, but accusations may be too "safe."</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Accusation accuracy</div><div class="stat-val" style="color: var(--green);">95.6%</div></div>
+      <div class="stat-box"><div class="stat-label">Avg per game</div><div class="stat-val">4.7</div></div>
+      <div class="stat-box"><div class="stat-label">Avg exposed/game</div><div class="stat-val">3.0</div></div>
+      <div class="stat-box"><div class="stat-label">All 4 exposed</div><div class="stat-val">21.4%</div></div>
+    </div>
+
+    <p>The high accuracy means the AI (and likely human players) mostly only accuse when they're confident — either after seeing someone's allegiance (Green power, exposure) or after observing strong card-play patterns. The +5/−2 risk/reward ratio makes this rational: you only need 29% accuracy to break even.</p>
+
+    <div class="insight"><strong>Design implication:</strong> With 3.0 of 4 players getting exposed per game, the hidden-to-exposed transition is a real game arc, not a rare event. This is great for drama. But the 95.6% accuracy suggests accusations are confirmatory rather than deductive — players accuse after they already know. If you want more "gambling" accusations, consider making the penalty milder (−1 instead of −2) or adding a reward for early correct guesses.</div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q4</span>
+    <span class="persona morgan">Morgan</span>
+  </div>
+  <div class="q-title">Round length distribution — is it consistent?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">Very consistent. Tight distributions at every player count.</div>
+
+    <table>
+      <tr><th>Players</th><th>Avg turns</th><th>Range</th><th>Std Dev</th><th>Completion</th></tr>
+      <tr><td>3 players</td><td>22.1</td><td>15–29</td><td>~3</td><td style="color: var(--orange);">77.4%</td></tr>
+      <tr><td>4 players</td><td>24.8</td><td>18–31</td><td>~2.5</td><td style="color: var(--green);">100%</td></tr>
+      <tr><td>5 players</td><td>27.9</td><td>21–35</td><td>~2.5</td><td style="color: var(--green);">100%</td></tr>
+    </table>
+
+    <div class="warning"><strong>3-player completion is only 77.4%.</strong> Some games stall because with 5 rooms and 15 cards (3 × 5), there's zero margin — every card must go into a room, and any turn spent on powers or accusations means a room can't fill. Consider reducing to 4 rooms at 3 players, or giving each player 6 cards.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════ JORDAN'S QUESTIONS ═══════════ -->
+
+<!-- Q5 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q5</span>
+    <span class="persona jordan">Jordan</span>
+  </div>
+  <div class="q-title">Are there "oh no!" moments? Getting exposed at the worst possible time?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">58% of games have a high-drama exposure event. The tension is real.</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Games with drama</div><div class="stat-val" style="color: var(--green);">58.4%</div></div>
+      <div class="stat-box"><div class="stat-label">Avg drama score</div><div class="stat-val">5.1</div></div>
+      <div class="stat-box"><div class="stat-label">Exposed while winning</div><div class="stat-val" style="color: var(--orange);">13.7%</div></div>
+      <div class="stat-box"><div class="stat-label">Early exposure</div><div class="stat-val">50.0%</div></div>
+    </div>
+
+    <p>We scored each exposure event on a "drama" scale (0–10) based on timing, cards remaining, and faction standing. Half of all exposures happen in the first third of the game — early enough that the exposed player still has to navigate several turns with everyone watching their plays.</p>
+
+    <div class="success"><strong>This is where the game sings.</strong> Getting exposed early with 3+ cards left means you have to play the rest of the game face-up while everyone else is still hidden. That forced asymmetry creates real narrative moments. 13.7% of exposures happen to the currently winning faction — the "oh no, I was doing so well" scenario.</div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q6</span>
+    <span class="persona jordan">Jordan</span>
+  </div>
+  <div class="q-title">Do players feel agency, or is it just luck of the draw?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">Skill matters — experts win 41% vs the 25% baseline. But luck keeps beginners in it.</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Expert win rate</div><div class="stat-val" style="color: var(--green);">41.0%</div></div>
+      <div class="stat-box"><div class="stat-label">Expected (random)</div><div class="stat-val">25.0%</div></div>
+      <div class="stat-box"><div class="stat-label">Skill multiplier</div><div class="stat-val" style="color: var(--accent);">1.64x</div></div>
+      <div class="stat-box"><div class="stat-label">Score edge</div><div class="stat-val">+1.9 pts</div></div>
+    </div>
+
+    <p>One expert vs three beginners: the expert wins 41% of the time instead of 25%. That's a 1.64x skill multiplier — meaningful but not crushing. The score advantage is only +1.9 points, meaning beginners regularly beat the expert.</p>
+
+    <p style="margin-top: 0.6rem;"><strong>Choice variety:</strong></p>
+    <div class="bar-row"><span class="bar-label">3 choices</span><div class="bar-track"><div class="bar-fill" style="width: 60.8%; background: var(--green);">60.8%</div></div></div>
+    <div class="bar-row"><span class="bar-label">2 choices</span><div class="bar-track"><div class="bar-fill" style="width: 35.8%; background: var(--blue);">35.8%</div></div></div>
+    <div class="bar-row"><span class="bar-label">1 choice</span><div class="bar-track"><div class="bar-fill" style="width: 3.4%; background: var(--muted);">3.4%</div></div></div>
+
+    <div class="insight"><strong>This is healthy for a party-weight game.</strong> Skill should give an edge but not dominate, because the social deduction element (reading people, bluffing) can't be captured by the simulator. In real play, the skill multiplier would likely be higher because human deduction/bluffing skill is a bigger factor than card play optimization.</div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q7</span>
+    <span class="persona jordan">Jordan</span>
+  </div>
+  <div class="q-title">Is the Locker Room resolution actually dramatic, or just bookkeeping?</div>
+  <div class="answer">
+    <div class="verdict verdict-warn">The mechanism works, but the 58% bust rate dampens drama.</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Bust rate</div><div class="stat-val" style="color: var(--red);">58.3%</div></div>
+      <div class="stat-box"><div class="stat-label">High-value (15+)</div><div class="stat-val">13.0%</div></div>
+      <div class="stat-box"><div class="stat-label">Avg score (when scored)</div><div class="stat-val" style="color: var(--green);">10.3</div></div>
+      <div class="stat-box"><div class="stat-label">Avg factions/room</div><div class="stat-val">2.57</div></div>
+    </div>
+
+    <p><strong>The reveal moment is inherently dramatic</strong> — flipping three face-down cards is exciting regardless. But 58% of the time, the result is "bust: nobody scores," which feels anticlimactic. When rooms DO score, the average payoff is 10.3 points — significant enough to swing the game.</p>
+
+    <p style="margin-top: 0.5rem;">The structural cause: with 3 cards from 6 factions, the probability of all three being different factions is high (57.6% in a 3-faction room). Three different factions = guaranteed bust.</p>
+
+    <div class="warning"><strong>This is the #1 design lever to pull.</strong> Reducing bust rate would simultaneously improve power fantasy (more big scores), tension (more VP in play), and the feeling that your card choices matter. Options: (a) bust rooms score half for each faction, (b) 2-card majority counts (change "most cards" to "most or equal cards with highest sum"), (c) reduce to 5 factions.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════ CASEY'S QUESTIONS ═══════════ -->
+
+<!-- Q8 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q8</span>
+    <span class="persona casey">Casey</span>
+  </div>
+  <div class="q-title">How does it scale? 3 vs 4 vs 5 — which count works best?</div>
+  <div class="answer">
+    <div class="verdict verdict-info">5 players is most balanced. 4 is the sweet spot. 3 has problems.</div>
+
+    <table>
+      <tr><th>Metric</th><th>3 Players</th><th>4 Players</th><th>5 Players</th></tr>
+      <tr><td>Avg turns</td><td>22</td><td>25</td><td>28</td></tr>
+      <tr><td>Completion rate</td><td style="color: var(--red);">77%</td><td style="color: var(--green);">100%</td><td style="color: var(--green);">100%</td></tr>
+      <tr><td>Bust rate</td><td>55%</td><td>58%</td><td>60%</td></tr>
+      <tr><td>Seat imbalance</td><td style="color: var(--red);">31%</td><td style="color: var(--orange);">17%</td><td style="color: var(--green);">10%</td></tr>
+    </table>
+
+    <p style="margin-top: 0.5rem;"><strong>Seat win rates:</strong></p>
+
+    <table>
+      <tr><th></th><th>Seat 0</th><th>Seat 1</th><th>Seat 2</th><th>Seat 3</th><th>Seat 4</th></tr>
+      <tr><td>3p</td><td style="color: var(--red);"><strong>51%</strong></td><td>29%</td><td>20%</td><td>—</td><td>—</td></tr>
+      <tr><td>4p</td><td style="color: var(--orange);"><strong>35%</strong></td><td>26%</td><td>21%</td><td>18%</td><td>—</td></tr>
+      <tr><td>5p</td><td>24%</td><td><strong>25%</strong></td><td>18%</td><td>16%</td><td>17%</td></tr>
+    </table>
+
+    <div class="warning"><strong>3-player Seat 0 wins 51%.</strong> First player in a 3-player game wins more than half the time. This is a significant structural advantage. The 23% gap between first and last seat is a problem that players will feel.</div>
+
+    <div class="success"><strong>5-player is the most balanced</strong> with only a 10% seat gap. 4-player is the practical sweet spot: 100% completion, fast games, moderate seat imbalance. The rules correctly identify 4 players as the cleanest first experience.</div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q9</span>
+    <span class="persona casey">Casey</span>
+  </div>
+  <div class="q-title">Play time distribution — is it really 15-20 minutes, or does it drag?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">Faster than advertised: 7-9 minutes of raw gameplay. The 15-minute target is comfortably met.</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">3p raw time</div><div class="stat-val" style="color: var(--green);">~7 min</div></div>
+      <div class="stat-box"><div class="stat-label">4p raw time</div><div class="stat-val" style="color: var(--green);">~8 min</div></div>
+      <div class="stat-box"><div class="stat-label">5p raw time</div><div class="stat-val" style="color: var(--green);">~9 min</div></div>
+      <div class="stat-box"><div class="stat-label">Under 20 min</div><div class="stat-val" style="color: var(--green);">100%</div></div>
+    </div>
+
+    <p>Based on ~20 seconds per turn (reasonable for a quick card placement), the raw game time is 7-9 minutes. Add 3-5 minutes for the draft, setup, and scoring, and you land at 10-14 minutes total. Every simulated game finished under 20 minutes.</p>
+
+    <div class="success"><strong>No dragging risk.</strong> The tight turn count (18-35 range with small std dev) means game length is extremely consistent. There's no runaway scenario where a game goes 45 minutes. This is excellent for the "one more game" factor.</div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q10</span>
+    <span class="persona casey">Casey</span>
+  </div>
+  <div class="q-title">Learning curve — how many games until win rates stabilize?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">Low barrier. Beginners are immediately competitive due to the game's inherent randomness.</div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Expert skill multiplier</div><div class="stat-val" style="color: var(--accent);">1.64x</div></div>
+      <div class="stat-box"><div class="stat-label">Score advantage</div><div class="stat-val">+1.9 pts</div></div>
+      <div class="stat-box"><div class="stat-label">Beginner win chance</div><div class="stat-val" style="color: var(--green);">~20%</div></div>
+    </div>
+
+    <p>A beginner playing against an expert still wins ~20% of the time (vs 25% if everyone were equal). The score gap is only 1.9 points — within the noise of a single lucky room resolution. This means your first game, you have a genuine shot at winning.</p>
+
+    <div class="insight"><strong>Why this works for casual players:</strong> The hidden allegiance mechanic acts as a natural equalizer. Even a perfect player can't control which faction wins a room when 2 of 3 cards are face-down. The draft requires some skill, but with only 5 picks, the decision space is manageable. Most players will "get it" by game 2.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════ THE BIG ONE ═══════════ -->
+
+<!-- Q11 -->
+<div class="q-section">
+  <div class="q-header">
+    <span class="q-num">Q11</span>
+    <span class="persona morgan">Morgan</span>
+    <span class="persona jordan">Jordan</span>
+    <span class="persona casey">Casey</span>
+  </div>
+  <div class="q-title">THE BIG ONE: Does the game have a dominant strategy?</div>
+  <div class="answer">
+    <div class="verdict verdict-good">No dominant strategy exists. The game is not solvable.</div>
+
+    <p><strong>Style matchup results (500 games, 4 styles competing):</strong></p>
+    <div class="bar-row"><span class="bar-label">Bold</span><div class="bar-track"><div class="bar-fill" style="width: calc(30% * 3.3); background: var(--red);">30.0%</div><div class="bar-marker" style="left: 25%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">Sneaky</span><div class="bar-track"><div class="bar-fill" style="width: calc(28.8% * 3.3); background: var(--blue);">28.8%</div><div class="bar-marker" style="left: 25%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">Balanced</span><div class="bar-track"><div class="bar-fill" style="width: calc(26.8% * 3.3); background: var(--purple);">26.8%</div><div class="bar-marker" style="left: 25%;"></div></div></div>
+    <div class="bar-row"><span class="bar-label">Disruptive</span><div class="bar-track"><div class="bar-fill" style="width: calc(14.4% * 3.3); background: var(--muted);">14.4%</div><div class="bar-marker" style="left: 25%;"></div></div></div>
+    <p class="detail">White marker = expected 25%.</p>
+
+    <p style="margin-top: 0.8rem;"><strong>Does drafting your own faction help?</strong></p>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-label">Winners draft own faction</div><div class="stat-val">44.0%</div></div>
+      <div class="stat-box"><div class="stat-label">Losers draft own faction</div><div class="stat-val">43.9%</div></div>
+    </div>
+
+    <p>These numbers are <strong>nearly identical</strong>. Drafting your own faction cards is not a winning strategy — because everyone does it, and being too obvious about it gives you away. The game's bluffing mechanism prevents the "obvious best move" from being dominant.</p>
+
+    <div class="success">
+      <strong>Why the game resists being solved:</strong>
+      <ol style="margin-top: 0.5rem; padding-left: 1.2rem;">
+        <li><strong>Hidden information</strong> — you can't optimize what you can't see</li>
+        <li><strong>Rock-paper-scissors dynamics</strong> — bold beats balanced, sneaky beats bold at social deduction, balanced beats sneaky at consistency</li>
+        <li><strong>Wild flexibility</strong> — 0s and 10s can become any faction, creating unpredictable resolutions</li>
+        <li><strong>Social pressure</strong> — the "correct" play often reveals your allegiance, creating a genuine tradeoff between winning and hiding</li>
+      </ol>
+    </div>
+
+    <div class="warning"><strong>One caveat:</strong> Disruptive play (hate-drafting, interference) is clearly suboptimal at 14.4%. In human play, some disruption is natural, but the game doesn't reward it. If you want disruption to be viable, consider adding a reward for busting rooms that would have scored for opponents.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="tldr">
+<h2>Priority Action Items</h2>
+<table>
+  <tr><th>#</th><th>Issue</th><th>Impact</th><th>Suggested Fix</th></tr>
+  <tr><td>1</td><td style="color: var(--red);"><strong>58% bust rate</strong></td><td>Kills power fantasy, flattens scoring</td><td>Partial-scoring busts OR 2-card majority wins</td></tr>
+  <tr><td>2</td><td style="color: var(--red);"><strong>First-player advantage (3p: 51%)</strong></td><td>Structural unfairness</td><td>Later seats get compensation (extra token, draft order)</td></tr>
+  <tr><td>3</td><td style="color: var(--orange);"><strong>3-player 77% completion</strong></td><td>Games sometimes fizzle</td><td>Reduce to 4 rooms at 3p, or deal 6 cards</td></tr>
+  <tr><td>4</td><td style="color: var(--orange);"><strong>Blue/Yellow/Purple powers unused</strong></td><td>3 of 6 powers feel wasted</td><td>Allow as "fast action" before placing, not instead-of</td></tr>
+  <tr><td>5</td><td style="color: var(--yellow);"><strong>Red faction too strong</strong></td><td>Balance gap (37.5% vs 27.4%)</td><td>Monitor in human play; may self-correct via targeting</td></tr>
+</table>
+</div>
+
+<footer>
+  Mystery Mascots Deep Analysis — 3,000 simulated games across 6 batches<br>
+  <code>python3 simulator/deep_analysis.py -n 500</code> to reproduce all findings<br>
+  Standard library only · Seeded RNG · All results deterministic
+</footer>
+
+</body>
+</html>

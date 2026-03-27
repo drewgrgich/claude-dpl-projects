@@ -1,0 +1,23 @@
+{
+  "skill_name": "card-layout",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a CSV of all 25 monster cards for Zone Scramble. Each card has a name, faction (color), rank number, and some have signature abilities. Can you lay these out as poker-sized cards with the faction color as a tint on each card? The CSV is at test-data/zone-scramble-monsters.csv",
+      "expected_output": "25 individual card PNGs color-coded by faction, plus a print sheet PDF with all cards arranged on letter pages with crop marks. Cards should show name prominently, rank as a large number, faction color as background tint, and ability text in the body.",
+      "files": ["test-data/zone-scramble-monsters.csv"]
+    },
+    {
+      "id": 2,
+      "prompt": "I've got this markdown file with 10 RPG item cards in a table. Can you make cards for them? They should be mini euro size since they're small reference cards. Color-code by rarity — common=gray, uncommon=green, rare=blue, very rare=purple. File is at test-data/simple-rpg-items.md",
+      "expected_output": "10 mini euro card PNGs (1.75x2.5 inches), each color-coded by rarity. Name at top, type and cost below, effect text in body, rarity at bottom. Plus a print sheet PDF fitting 16 per letter page.",
+      "files": ["test-data/simple-rpg-items.md"]
+    },
+    {
+      "id": 3,
+      "prompt": "I need to make a shared card back for Zone Scramble — just a simple design with the game name centered, a dark background, and maybe a subtle pattern. Poker size to match the fronts. Then give me a print sheet that has fronts on one page and backs on the next so I can do double-sided printing.",
+      "expected_output": "A card back PNG plus a multi-page PDF where odd pages have card fronts and even pages have the matching backs in mirrored order for duplex printing.",
+      "files": ["test-data/zone-scramble-monsters.csv"]
+    }
+  ]
+}

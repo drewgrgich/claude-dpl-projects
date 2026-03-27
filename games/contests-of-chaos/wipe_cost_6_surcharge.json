@@ -1,0 +1,234 @@
+{
+  "num_games": 200,
+  "num_players": 3,
+  "game_length": {
+    "mean": 68.095,
+    "min": 36,
+    "max": 200,
+    "median": 63,
+    "aborted": 4
+  },
+  "wins": {
+    "0": 75,
+    "1": 49,
+    "2": 76
+  },
+  "win_rates": {
+    "0": 0.375,
+    "1": 0.245,
+    "2": 0.38
+  },
+  "vp_averages": {
+    "0": {
+      "total": 26.09,
+      "event": 25.795,
+      "playbook": 0.0,
+      "events_completed": 4.11
+    },
+    "1": {
+      "total": 23.335,
+      "event": 22.955,
+      "playbook": 0.0,
+      "events_completed": 3.68
+    },
+    "2": {
+      "total": 25.86,
+      "event": 25.5,
+      "playbook": 0.0,
+      "events_completed": 3.855
+    }
+  },
+  "action_distribution": {
+    "0": {
+      "recruit_lineup": 18.25,
+      "complete_event": 4.07,
+      "wipe_jumbotron": 0.385,
+      "post_wipe_complete": 0.04
+    },
+    "1": {
+      "recruit_lineup": 18.5,
+      "wipe_jumbotron": 0.58,
+      "complete_event": 3.625,
+      "post_wipe_complete": 0.055
+    },
+    "2": {
+      "recruit_lineup": 18.245,
+      "complete_event": 3.765,
+      "wipe_jumbotron": 0.675,
+      "post_wipe_complete": 0.09
+    }
+  },
+  "events_by_tier": {
+    "1": {
+      "total": 544,
+      "per_game": 2.72
+    },
+    "2": {
+      "total": 616,
+      "per_game": 3.08
+    },
+    "3": {
+      "total": 648,
+      "per_game": 3.24
+    },
+    "4": {
+      "total": 185,
+      "per_game": 0.925
+    },
+    "5": {
+      "total": 50,
+      "per_game": 0.25
+    },
+    "6": {
+      "total": 286,
+      "per_game": 1.43
+    }
+  },
+  "most_completed_events": [
+    [
+      "Rivalry Week",
+      121
+    ],
+    [
+      "Substitution",
+      120
+    ],
+    [
+      "Opening Ceremony",
+      120
+    ],
+    [
+      "Photo Finish",
+      119
+    ],
+    [
+      "Synchronized Swimming",
+      110
+    ],
+    [
+      "Convoy",
+      108
+    ],
+    [
+      "Capture the Flag",
+      105
+    ],
+    [
+      "Hide and Seek",
+      101
+    ],
+    [
+      "Obstacle Course",
+      100
+    ],
+    [
+      "Wheelbarrow Race",
+      98
+    ]
+  ],
+  "least_completed_events": [
+    [
+      "Strategy Meeting",
+      28
+    ],
+    [
+      "Secret Playbook",
+      25
+    ],
+    [
+      "The Final Limbo",
+      25
+    ],
+    [
+      "Sprinkler Ambush",
+      21
+    ],
+    [
+      "Shield Wall",
+      8
+    ],
+    [
+      "Pit Stop",
+      7
+    ],
+    [
+      "Fantasy League",
+      3
+    ],
+    [
+      "Instant Replay",
+      3
+    ],
+    [
+      "Trophy Case",
+      2
+    ],
+    [
+      "Halftime Show",
+      2
+    ]
+  ],
+  "never_completed_events": [],
+  "wipes": {
+    "total": 328,
+    "per_game": 1.64,
+    "games_with_wipe": 199,
+    "max_in_game": 3
+  },
+  "stagnation": {
+    "avg_stagnation_turns": 43.92,
+    "avg_max_streak": 18.38,
+    "worst_streak": 159
+  },
+  "first_event_turn": {
+    "mean": 2.7,
+    "min": 0,
+    "max": 17
+  },
+  "lineup_draft_slots": {
+    "2": 849,
+    "0": 8588,
+    "1": 1183,
+    "3": 379
+  },
+  "standing_ovation_rate": 0.98,
+  "all_event_completions": {
+    "Scavenger Hunt": 91,
+    "Rivalry Week": 121,
+    "Drag Race": 92,
+    "Shell Game": 96,
+    "Tug of War": 96,
+    "Marathon": 66,
+    "Substitution": 120,
+    "Guessing Booth": 94,
+    "Opening Ceremony": 120,
+    "Photo Finish": 119,
+    "Sudden Death": 97,
+    "Capture the Flag": 105,
+    "Convoy": 108,
+    "Red Light Green Light": 85,
+    "Wheelbarrow Race": 98,
+    "King of the Hill": 28,
+    "Sprinkler Ambush": 21,
+    "Strategy Meeting": 28,
+    "Great Scavenge": 36,
+    "Hide and Seek": 101,
+    "Synchronized Swimming": 110,
+    "Time Capsule": 29,
+    "Easter Egg Hunt": 81,
+    "Obstacle Course": 100,
+    "Limbo Contest": 71,
+    "New Rules!": 33,
+    "Secret Playbook": 25,
+    "Soapbox Derby": 32,
+    "Disappearing Act": 32,
+    "Pit Stop": 7,
+    "Group Photo": 44,
+    "Trophy Case": 2,
+    "Shield Wall": 8,
+    "The Final Limbo": 25,
+    "Fantasy League": 3,
+    "Instant Replay": 3,
+    "Halftime Show": 2
+  }
+}

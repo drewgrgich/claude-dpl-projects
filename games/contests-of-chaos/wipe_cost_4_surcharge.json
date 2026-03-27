@@ -1,0 +1,234 @@
+{
+  "num_games": 200,
+  "num_players": 3,
+  "game_length": {
+    "mean": 67.175,
+    "min": 36,
+    "max": 200,
+    "median": 63,
+    "aborted": 2
+  },
+  "wins": {
+    "0": 83,
+    "1": 56,
+    "2": 61
+  },
+  "win_rates": {
+    "0": 0.415,
+    "1": 0.28,
+    "2": 0.305
+  },
+  "vp_averages": {
+    "0": {
+      "total": 26.28,
+      "event": 26.08,
+      "playbook": 0.0,
+      "events_completed": 4.275
+    },
+    "1": {
+      "total": 24.52,
+      "event": 24.33,
+      "playbook": 0.0,
+      "events_completed": 4.07
+    },
+    "2": {
+      "total": 25.065,
+      "event": 24.805,
+      "playbook": 0.0,
+      "events_completed": 4.04
+    }
+  },
+  "action_distribution": {
+    "0": {
+      "recruit_lineup": 17.455,
+      "complete_event": 4.185,
+      "wipe_jumbotron": 0.755,
+      "post_wipe_complete": 0.09
+    },
+    "1": {
+      "recruit_lineup": 17.435,
+      "wipe_jumbotron": 1.055,
+      "post_wipe_complete": 0.165,
+      "complete_event": 3.905
+    },
+    "2": {
+      "recruit_lineup": 17.495,
+      "complete_event": 3.87,
+      "wipe_jumbotron": 1.02,
+      "post_wipe_complete": 0.17
+    }
+  },
+  "events_by_tier": {
+    "1": {
+      "total": 609,
+      "per_game": 3.045
+    },
+    "2": {
+      "total": 669,
+      "per_game": 3.345
+    },
+    "3": {
+      "total": 776,
+      "per_game": 3.88
+    },
+    "4": {
+      "total": 130,
+      "per_game": 0.65
+    },
+    "5": {
+      "total": 39,
+      "per_game": 0.195
+    },
+    "6": {
+      "total": 254,
+      "per_game": 1.27
+    }
+  },
+  "most_completed_events": [
+    [
+      "Rivalry Week",
+      148
+    ],
+    [
+      "Synchronized Swimming",
+      147
+    ],
+    [
+      "Substitution",
+      145
+    ],
+    [
+      "Photo Finish",
+      140
+    ],
+    [
+      "Convoy",
+      131
+    ],
+    [
+      "Opening Ceremony",
+      126
+    ],
+    [
+      "Sudden Death",
+      116
+    ],
+    [
+      "Guessing Booth",
+      114
+    ],
+    [
+      "Obstacle Course",
+      114
+    ],
+    [
+      "Capture the Flag",
+      109
+    ]
+  ],
+  "least_completed_events": [
+    [
+      "Time Capsule",
+      21
+    ],
+    [
+      "Strategy Meeting",
+      19
+    ],
+    [
+      "New Rules!",
+      17
+    ],
+    [
+      "Sprinkler Ambush",
+      13
+    ],
+    [
+      "Fantasy League",
+      4
+    ],
+    [
+      "Halftime Show",
+      3
+    ],
+    [
+      "Shield Wall",
+      3
+    ],
+    [
+      "Instant Replay",
+      3
+    ],
+    [
+      "Trophy Case",
+      3
+    ],
+    [
+      "Pit Stop",
+      1
+    ]
+  ],
+  "never_completed_events": [],
+  "wipes": {
+    "total": 566,
+    "per_game": 2.83,
+    "games_with_wipe": 200,
+    "max_in_game": 5
+  },
+  "stagnation": {
+    "avg_stagnation_turns": 42.515,
+    "avg_max_streak": 17.845,
+    "worst_streak": 187
+  },
+  "first_event_turn": {
+    "mean": 2.57,
+    "min": 0,
+    "max": 17
+  },
+  "lineup_draft_slots": {
+    "2": 680,
+    "0": 8350,
+    "1": 1206,
+    "3": 241
+  },
+  "standing_ovation_rate": 0.99,
+  "all_event_completions": {
+    "Scavenger Hunt": 102,
+    "Rivalry Week": 148,
+    "Drag Race": 104,
+    "Group Photo": 37,
+    "Shell Game": 92,
+    "Tug of War": 104,
+    "Substitution": 145,
+    "Guessing Booth": 114,
+    "Opening Ceremony": 126,
+    "Photo Finish": 140,
+    "Sudden Death": 116,
+    "Great Scavenge": 24,
+    "Hide and Seek": 100,
+    "Limbo Contest": 87,
+    "Convoy": 131,
+    "Wheelbarrow Race": 96,
+    "Easter Egg Hunt": 104,
+    "Red Light Green Light": 91,
+    "Disappearing Act": 23,
+    "King of the Hill": 22,
+    "Synchronized Swimming": 147,
+    "Capture the Flag": 109,
+    "Marathon": 48,
+    "Obstacle Course": 114,
+    "New Rules!": 17,
+    "Soapbox Derby": 21,
+    "Time Capsule": 21,
+    "Halftime Show": 3,
+    "Secret Playbook": 23,
+    "Shield Wall": 3,
+    "Strategy Meeting": 19,
+    "Sprinkler Ambush": 13,
+    "The Final Limbo": 22,
+    "Instant Replay": 3,
+    "Pit Stop": 1,
+    "Trophy Case": 3,
+    "Fantasy League": 4
+  }
+}

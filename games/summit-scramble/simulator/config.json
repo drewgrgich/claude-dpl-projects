@@ -1,0 +1,46 @@
+{
+  "game_rules": {
+    "cards_per_faction": 11,
+    "rank_range": [0, 10],
+    "num_factions": 6,
+    "total_cards": 66,
+
+    "starting_hand": {
+      "3_player": 15,
+      "4_player": 13,
+      "5_player": 11
+    },
+
+    "faction_hierarchy": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+
+    "power_threshold": 6,
+
+    "formations": {
+      "solo": {"min_cards": 1, "max_cards": 1},
+      "surge": {"min_cards": 2, "max_cards": 3},
+      "daisy_chain": {"min_cards": 3, "max_cards": 10},
+      "confetti_cannon": {"min_cards": 4, "max_cards": 4}
+    },
+
+    "fatigue": {
+      "1st": 0,
+      "2nd": 2,
+      "3rd": 4,
+      "4th": 6,
+      "last_base": 8,
+      "last_per_card": 1
+    },
+
+    "championship_limit": {
+      "standard": 30,
+      "short": 20
+    },
+
+    "mercy_rule_cap": 12,
+
+    "rotation_3p_must_alternate": true,
+
+    "max_turns_per_round": 300,
+    "max_rounds": 50
+  }
+}

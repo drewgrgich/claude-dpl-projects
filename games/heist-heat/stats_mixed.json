@@ -1,0 +1,69 @@
+{
+  "num_games": 500,
+  "num_players": 3,
+  "win_rates": {
+    "0": 0.374,
+    "1": 0.356,
+    "2": 0.27
+  },
+  "avg_scores": [
+    15.892,
+    15.988,
+    12.006
+  ],
+  "min_scores": [
+    0,
+    0,
+    0
+  ],
+  "max_scores": [
+    76,
+    67,
+    66
+  ],
+  "overall_avg_score": 14.628666666666666,
+  "overall_score_std": 14.682374179796582,
+  "avg_turns_per_round": 3.5833333333333335,
+  "avg_final_heat": 8.824666666666667,
+  "getaway_rate": 0.174,
+  "bust_rate": 0.22977777777777778,
+  "cracks_attempted_per_player": [
+    5.22,
+    4.402,
+    3.588
+  ],
+  "cracks_succeeded_per_player": [
+    2.254,
+    2.096,
+    1.582
+  ],
+  "crack_success_rate": 0.44905374716124147,
+  "chains_per_player": [
+    1.818,
+    1.638,
+    1.264
+  ],
+  "avg_chain_length": 8.613135593220338,
+  "max_chain_length": 15,
+  "cards_claimed_per_player": [
+    15.786,
+    14.848,
+    11.232
+  ],
+  "alarms_per_game": 3.972,
+  "vault_empty_pct": 60.93333333333333,
+  "heat_cap_pct": 40.86666666666667,
+  "faction_powers_total": {
+    "GREEN": 899,
+    "RED": 375,
+    "ORANGE": 908,
+    "PURPLE": 262,
+    "YELLOW": 324,
+    "BLUE": 788
+  },
+  "round_averages": [
+    4.881333333333333,
+    4.856,
+    4.891333333333334
+  ]
+}

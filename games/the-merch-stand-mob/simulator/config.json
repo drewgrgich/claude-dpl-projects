@@ -1,0 +1,65 @@
+{
+  "game_rules": {
+    "hand_size": {
+      "3_player": 10,
+      "4_player": 10,
+      "5_player": 8
+    },
+    "stand_size_rule": "players_minus_one",
+    "trample_threshold": {
+      "3_player": 4,
+      "4_player": 4,
+      "5_player": 4
+    },
+    "set_bonus": {
+      "first_set_colors": 3,
+      "first_set_vp": 5,
+      "mid_set_colors": 0,
+      "mid_set_vp": 0,
+      "second_set_colors": 6,
+      "second_set_vp": 8
+    },
+    "sneak_cancel_threshold": {
+      "3_player": 2,
+      "4_player": 2,
+      "5_player": 3
+    },
+    "max_rounds": 50,
+    "sneak_rank": 0,
+    "shove_rank": 10,
+    "anchor_required_ranks": [0, 10],
+    "anchor_valid_range": [1, 9]
+  },
+  "the_drop": {
+    "enabled": false,
+    "hand_size": 6,
+    "heat_by_finish": {
+      "1": 0,
+      "2": 1,
+      "3": 3,
+      "4": 5,
+      "5": 7
+    },
+    "boiling_point_by_players": {
+      "3": 15,
+      "4": 20,
+      "5": 28
+    },
+    "boiling_point": 15,
+    "min_rounds": 4,
+    "max_rounds": 6
+  },
+  "factions": {
+    "RED": {"name": "Super-Dupes", "ability": "stadium_sweep"},
+    "ORANGE": {"name": "Finders-Keepers", "ability": "keen_eye"},
+    "YELLOW": {"name": "Tinkerers", "ability": "quick_hands"},
+    "GREEN": {"name": "Prognosticationers", "ability": "small_prophecies"},
+    "BLUE": {"name": "Magicians", "ability": "sleight_of_paw"},
+    "PURPLE": {"name": "Time Travelers", "ability": "temporal_recall"}
+  },
+  "variants": {
+    "mercy_rule": false,
+    "double_drop": false,
+    "silent_auction": false
+  }
+}

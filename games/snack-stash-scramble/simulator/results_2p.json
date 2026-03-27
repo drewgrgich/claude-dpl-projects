@@ -1,0 +1,78 @@
+{
+  "num_games": 500,
+  "num_players": 2,
+  "win_rates": {
+    "0": 0.534,
+    "1": 0.466
+  },
+  "avg_turns": 43.444,
+  "min_turns": 27,
+  "max_turns": 63,
+  "median_turns": 43,
+  "turn_limit_rate": 0.0,
+  "halftime_rate": 1.0,
+  "avg_halftime_turn": 28.764,
+  "per_player": {
+    "0": {
+      "avg_final_score": 98.076,
+      "avg_banked_score": 110.102,
+      "avg_hand_penalty": 12.026,
+      "avg_hand_size_end": 3.302,
+      "avg_wilds_in_hand": 0.0,
+      "avg_sets_count": 4.93,
+      "score_min": 12,
+      "score_max": 210
+    },
+    "1": {
+      "avg_final_score": 93.19,
+      "avg_banked_score": 104.638,
+      "avg_hand_penalty": 11.448,
+      "avg_hand_size_end": 3.276,
+      "avg_wilds_in_hand": 0.0,
+      "avg_sets_count": 4.734,
+      "score_min": 7,
+      "score_max": 227
+    }
+  },
+  "faction_powers": {
+    "RED": 464,
+    "ORANGE": 1493,
+    "YELLOW": 694,
+    "GREEN": 347,
+    "BLUE": 950,
+    "PURPLE": 884
+  },
+  "faction_powers_per_game": {
+    "RED": 0.928,
+    "ORANGE": 2.986,
+    "YELLOW": 1.388,
+    "GREEN": 0.694,
+    "BLUE": 1.9,
+    "PURPLE": 1.768
+  },
+  "action_totals": {
+    "draw_feeder": 13496,
+    "bank": 4832,
+    "discard": 21375,
+    "snack_floor": 8300,
+    "extend": 7209,
+    "draw_litter_box": 426,
+    "yellow_extend": 250
+  },
+  "action_per_game": {
+    "draw_feeder": 26.992,
+    "bank": 9.664,
+    "discard": 42.75,
+    "snack_floor": 16.6,
+    "extend": 14.418,
+    "draw_litter_box": 0.852,
+    "yellow_extend": 0.5
+  },
+  "wilds_banked_per_game": 8.076,
+  "wilds_discarded_per_game": 0.0,
+  "poison_peanuts_per_game": 0.18,
+  "avg_max_stagnation": 3.74,
+  "stagnation_5_plus_rate": 0.34,
+  "snack_floor_per_game": 16.6,
+  "mid_bite_whistle_rate": 0.408
+}

@@ -1,0 +1,394 @@
+{
+  "q1_faction_balance": {
+    "4p": {
+      "RED": {
+        "wins": 97,
+        "appearances": 259,
+        "win_rate_raw": 0.194,
+        "win_rate_adjusted": 0.3745173745173745
+      },
+      "ORANGE": {
+        "wins": 76,
+        "appearances": 277,
+        "win_rate_raw": 0.152,
+        "win_rate_adjusted": 0.2743682310469314
+      },
+      "YELLOW": {
+        "wins": 84,
+        "appearances": 264,
+        "win_rate_raw": 0.168,
+        "win_rate_adjusted": 0.3181818181818182
+      },
+      "GREEN": {
+        "wins": 82,
+        "appearances": 273,
+        "win_rate_raw": 0.164,
+        "win_rate_adjusted": 0.30036630036630035
+      },
+      "BLUE": {
+        "wins": 84,
+        "appearances": 257,
+        "win_rate_raw": 0.168,
+        "win_rate_adjusted": 0.32684824902723736
+      },
+      "PURPLE": {
+        "wins": 77,
+        "appearances": 250,
+        "win_rate_raw": 0.154,
+        "win_rate_adjusted": 0.308
+      }
+    },
+    "3p": {
+      "RED": {
+        "wins": 79,
+        "appearances": 196,
+        "win_rate_raw": 0.158,
+        "win_rate_adjusted": 0.4030612244897959
+      },
+      "ORANGE": {
+        "wins": 68,
+        "appearances": 210,
+        "win_rate_raw": 0.136,
+        "win_rate_adjusted": 0.3238095238095238
+      },
+      "YELLOW": {
+        "wins": 90,
+        "appearances": 217,
+        "win_rate_raw": 0.18,
+        "win_rate_adjusted": 0.4147465437788018
+      },
+      "GREEN": {
+        "wins": 84,
+        "appearances": 218,
+        "win_rate_raw": 0.168,
+        "win_rate_adjusted": 0.3853211009174312
+      },
+      "BLUE": {
+        "wins": 87,
+        "appearances": 214,
+        "win_rate_raw": 0.174,
+        "win_rate_adjusted": 0.40654205607476634
+      },
+      "PURPLE": {
+        "wins": 92,
+        "appearances": 198,
+        "win_rate_raw": 0.184,
+        "win_rate_adjusted": 0.46464646464646464
+      }
+    },
+    "5p": {
+      "RED": {
+        "wins": 97,
+        "appearances": 294,
+        "win_rate_raw": 0.194,
+        "win_rate_adjusted": 0.3299319727891156
+      },
+      "ORANGE": {
+        "wins": 67,
+        "appearances": 304,
+        "win_rate_raw": 0.134,
+        "win_rate_adjusted": 0.22039473684210525
+      },
+      "YELLOW": {
+        "wins": 88,
+        "appearances": 314,
+        "win_rate_raw": 0.176,
+        "win_rate_adjusted": 0.2802547770700637
+      },
+      "GREEN": {
+        "wins": 70,
+        "appearances": 285,
+        "win_rate_raw": 0.14,
+        "win_rate_adjusted": 0.24561403508771928
+      },
+      "BLUE": {
+        "wins": 83,
+        "appearances": 317,
+        "win_rate_raw": 0.166,
+        "win_rate_adjusted": 0.2618296529968454
+      },
+      "PURPLE": {
+        "wins": 95,
+        "appearances": 313,
+        "win_rate_raw": 0.19,
+        "win_rate_adjusted": 0.3035143769968051
+      }
+    }
+  },
+  "q1_avg_scores": {
+    "4p": {
+      "RED": 7.166,
+      "ORANGE": 4.292,
+      "YELLOW": 3.176,
+      "GREEN": 3.69,
+      "BLUE": 4.02,
+      "PURPLE": 3.412
+    },
+    "3p": {
+      "RED": 6.178,
+      "ORANGE": 3.446,
+      "YELLOW": 3.374,
+      "GREEN": 2.958,
+      "BLUE": 3.48,
+      "PURPLE": 3.3
+    },
+    "5p": {
+      "RED": 7.922,
+      "ORANGE": 4.674,
+      "YELLOW": 3.838,
+      "GREEN": 3.828,
+      "BLUE": 3.694,
+      "PURPLE": 3.702
+    }
+  },
+  "q2_sneak_vs_shove": {
+    "0": {
+      "placed": 1260,
+      "in_winning_rooms": 611,
+      "total_pts_contributed": 0
+    },
+    "10": {
+      "placed": 1224,
+      "in_winning_rooms": 475,
+      "total_pts_contributed": 4750
+    },
+    "mid": {
+      "placed": 6546,
+      "in_winning_rooms": 1455
+    }
+  },
+  "q2_style_win_rates": {
+    "sneaky": 0.288,
+    "bold": 0.3,
+    "balanced": 0.268,
+    "disruptive": 0.144
+  },
+  "q3_deduction": {
+    "total_accusations": 2344,
+    "correct": 2241,
+    "accuracy": 0.9560580204778157,
+    "avg_per_game": 4.688
+  },
+  "q3_exposure": {
+    "avg_exposed": 3.032,
+    "all_exposed_pct": 0.214,
+    "none_exposed_pct": 0.0
+  },
+  "q4_length_4p": {
+    "avg": 24.792,
+    "min": 18,
+    "max": 31,
+    "median": 25,
+    "std": 3.191979949811715,
+    "completion_rate": 1.0,
+    "distribution": {
+      "15-20": 0.032,
+      "20-25": 0.446,
+      "25-30": 0.464,
+      "30-35": 0.058,
+      "35-50": 0.0
+    }
+  },
+  "q4_length_3p": {
+    "avg": 22.066,
+    "min": 15,
+    "max": 29,
+    "median": 22,
+    "std": 2.860357320336043,
+    "completion_rate": 0.774,
+    "distribution": {
+      "15-20": 0.218,
+      "20-25": 0.572,
+      "25-30": 0.21,
+      "30-35": 0.0,
+      "35-50": 0.0
+    }
+  },
+  "q4_length_5p": {
+    "avg": 27.924,
+    "min": 21,
+    "max": 35,
+    "median": 28,
+    "std": 3.5177015223011727,
+    "completion_rate": 1.0,
+    "distribution": {
+      "15-20": 0.0,
+      "20-25": 0.204,
+      "25-30": 0.466,
+      "30-35": 0.308,
+      "35-50": 0.022
+    }
+  },
+  "q5_oh_no": {
+    "total_exposures": 490,
+    "avg_per_game": 0.98,
+    "high_drama_count": 348,
+    "high_drama_per_game": 0.696,
+    "pct_games_with_drama": 0.584,
+    "avg_drama_score": 5.045918367346939,
+    "exposure_while_winning": 0.13673469387755102,
+    "early_exposure_pct": 0.5
+  },
+  "q6_agency": {
+    "expert_win_rate": 0.41,
+    "expected_random_win_rate": 0.25,
+    "skill_multiplier": 1.64,
+    "expert_avg_score": 12.868,
+    "beginner_avg_score": 10.988,
+    "score_advantage": 1.8800000000000008
+  },
+  "q6_choices": {
+    "avg_choices_per_turn": 2.573652791222975,
+    "pct_1_choice": 0.03420458212326557,
+    "pct_2_choices": 0.3579380445304937,
+    "pct_3_choices": 0.6078573733462407
+  },
+  "q7_drama": {
+    "total_resolutions": 3000,
+    "bust_rate": 0.5833333333333334,
+    "high_value_rate": 0.13,
+    "close_rate": 0.5833333333333334,
+    "avg_factions_per_room": 2.5696666666666665,
+    "score_when_scored": 10.3024,
+    "pct_3_faction_rooms": 0.5833333333333334
+  },
+  "q8_scaling": {
+    "3p": {
+      "avg_turns": 22.066,
+      "completion_rate": 0.774,
+      "bust_rate": 0.5507124895222129,
+      "avg_exposures": 2.354,
+      "seat_imbalance": 0.31,
+      "seat_rates": {
+        "0": 0.508,
+        "1": 0.294,
+        "2": 0.198
+      },
+      "avg_winner_score": 18.258
+    },
+    "4p": {
+      "avg_turns": 24.792,
+      "completion_rate": 1.0,
+      "bust_rate": 0.5833333333333334,
+      "avg_exposures": 3.032,
+      "seat_imbalance": 0.174,
+      "seat_rates": {
+        "0": 0.352,
+        "1": 0.256,
+        "2": 0.214,
+        "3": 0.178
+      },
+      "avg_winner_score": 20.118
+    },
+    "5p": {
+      "avg_turns": 27.924,
+      "completion_rate": 1.0,
+      "bust_rate": 0.6022857142857143,
+      "avg_exposures": 3.76,
+      "seat_imbalance": 0.096,
+      "seat_rates": {
+        "0": 0.242,
+        "1": 0.254,
+        "2": 0.18,
+        "3": 0.158,
+        "4": 0.166
+      },
+      "avg_winner_score": 21.13
+    }
+  },
+  "q9_playtime_4p": {
+    "avg_minutes": 8.264000000000001,
+    "min_minutes": 6.0,
+    "max_minutes": 10.333333333333334,
+    "pct_under_15": 1.0,
+    "pct_under_20": 1.0,
+    "pct_over_25": 0.0
+  },
+  "q9_playtime_3p": {
+    "avg_minutes": 7.355333333333326,
+    "min_minutes": 5.0,
+    "max_minutes": 9.666666666666666,
+    "pct_under_15": 1.0,
+    "pct_under_20": 1.0,
+    "pct_over_25": 0.0
+  },
+  "q9_playtime_5p": {
+    "avg_minutes": 9.308000000000002,
+    "min_minutes": 7.0,
+    "max_minutes": 11.666666666666666,
+    "pct_under_15": 1.0,
+    "pct_under_20": 1.0,
+    "pct_over_25": 0.0
+  },
+  "q10_learning": {
+    "expert_vs_beginner_win_rate": 0.41,
+    "skill_advantage": 1.8800000000000008,
+    "beginner_windows": [
+      {
+        "games": "1-50",
+        "avg_winner_score": 18.76,
+        "avg_turns": 24.16
+      },
+      {
+        "games": "51-100",
+        "avg_winner_score": 20.94,
+        "avg_turns": 25.04
+      },
+      {
+        "games": "101-150",
+        "avg_winner_score": 21.0,
+        "avg_turns": 23.24
+      },
+      {
+        "games": "151-200",
+        "avg_winner_score": 17.5,
+        "avg_turns": 23.58
+      },
+      {
+        "games": "201-250",
+        "avg_winner_score": 18.62,
+        "avg_turns": 24.28
+      },
+      {
+        "games": "251-300",
+        "avg_winner_score": 19.74,
+        "avg_turns": 22.94
+      },
+      {
+        "games": "301-350",
+        "avg_winner_score": 20.14,
+        "avg_turns": 24.48
+      },
+      {
+        "games": "351-400",
+        "avg_winner_score": 19.6,
+        "avg_turns": 24.66
+      },
+      {
+        "games": "401-450",
+        "avg_winner_score": 18.94,
+        "avg_turns": 24.08
+      },
+      {
+        "games": "451-500",
+        "avg_winner_score": 19.9,
+        "avg_turns": 24.56
+      }
+    ]
+  },
+  "q11_dominant": {
+    "style_win_rates": {
+      "sneaky": 0.288,
+      "bold": 0.3,
+      "balanced": 0.268,
+      "disruptive": 0.144
+    },
+    "best_style": "bold",
+    "worst_style": "disruptive",
+    "spread": 0.156
+  },
+  "q11_draft": {
+    "avg_winner_own_faction_pct": 0.43959999999999994,
+    "avg_loser_own_faction_pct": 0.43920000000000003
+  }
+}
