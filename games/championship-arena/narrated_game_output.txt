@@ -1,0 +1,168 @@
+
+############################################################
+#  CHAMPIONSHIP ARENA — 3 PLAYERS
+############################################################
+
+🎭 Welcome to the Arena!
+
+RINGS: ['Orange', 'Blue', 'Yellow']
+STUNT POOL: [Y6, Y10, G1, P3, B4, Y1]
+TALENTS:
+  P0: The Collector — When you claim a Ring, draw +2 cards instead of standard.
+  P1: The Time Traveler — After reveal, swap one of your cards with opponent's at same Ring.
+  P2: The Illusionist — Choose one Ring to be Wild (any suit matches) this round.
+
+P0's hand: [P5, G0, G3, Y2, O7]
+
+P1's hand: [B1, G6, R9, R10, O9]
+
+P2's hand: [O1, B3, G8, B7, R1]
+
+============================================================
+  ROUND 0
+============================================================
+  🎭 SPECTATOR: 🎉 The Roaring Crowd — Double all FP this round (1→2, 3→6, 6→12)
+  → All FP this round is DOUBLED!
+  🎲 Dice rolled: [(0, [3, 5, 6, 1]), (1, [5, 6, 4, 5]), (2, [1, 4, 1, 2])]
+  🎯 Assignments: [(0, {'Orange': [3], 'Blue': [5], 'Yellow': [6]}), (1, {'Orange': [5], 'Blue': [6], 'Yellow': [4]}), (2, {'Orange': [1], 'Blue': [4], 'Yellow': [1]})]
+  🃏 Cards played (face-down): [(0, [O7, Y2, G0]), (1, [R10, G6, R9]), (2, [G8, B7, B3])]
+  ✨ REVEAL! Cards flip:
+    P0 at Orange: O7
+    P0 at Blue: Y2
+    P0 at Yellow: G0
+    P1 at Orange: R10
+    P1 at Blue: G6
+    P1 at Yellow: R9
+    P2 at Orange: G8
+    P2 at Blue: B7
+    P2 at Yellow: B3
+
+  📊 ENERGY SCORES:
+    P0 @ Orange: 1 (dice=[3], card=R10)
+    P1 @ Orange: 2 (dice=[5], card=O7)
+    P2 @ Orange: 1 (dice=[1], card=G8)
+    P0 @ Blue: 9 (dice=[5], card=Y2)
+    P1 @ Blue: 19 (dice=[6], card=G6)
+    P2 @ Blue: 11 (dice=[4], card=B7)
+    P0 @ Yellow: 6 (dice=[6], card=G0)
+    P1 @ Yellow: 4 (dice=[4], card=R9)
+    P2 @ Yellow: 1 (dice=[1], card=B3)
+
+  🏆 RING CLAIMS:
+    Orange → P1 (score: 0)
+    Blue → P1 (score: 0)
+    Yellow → P0 (score: 0)
+  🎪 P0 drafts from Stunt Pool
+  🎪 P1 drafts from Stunt Pool
+  🎪 P2 drafts from Stunt Pool
+
+============================================================
+  ROUND 1
+============================================================
+  🎭 SPECTATOR: 🌈 The Rainbow Ring — Choose a Ring: all cards = 10, dice normal (even overrides Purple)
+  → Blue Ring is WILD (all cards = 10)!
+  🎲 Dice rolled: [(0, [2, 2, 6, 5]), (1, [1, 4, 2, 3]), (2, [4, 4, 4, 1])]
+  🎯 Assignments: [(0, {'Orange': [2], 'Blue': [2], 'Yellow': [6]}), (1, {'Orange': [1], 'Blue': [4], 'Yellow': [2]}), (2, {'Orange': [4], 'Blue': [4], 'Yellow': [4]})]
+  🃏 Cards played (face-down): [(0, [P6, G4, G3]), (1, [G9, Y6, Y7]), (2, [O1, R1, G1])]
+  ✨ REVEAL! Cards flip:
+    P0 at Orange: P6
+    P0 at Blue: G4
+    P0 at Yellow: G3
+    P1 at Orange: G9
+    P1 at Blue: Y6
+    P1 at Yellow: Y7
+    P2 at Orange: O1
+    P2 at Blue: R1
+    P2 at Yellow: G1
+
+  📊 ENERGY SCORES:
+    P0 @ Orange: 3 (dice=[2], card=P6)
+    P1 @ Orange: 3 (dice=[1], card=G9)
+    P2 @ Orange: 2 (dice=[4], card=O1)
+    P0 @ Blue: 26 (dice=[2], card=Y6)
+    P1 @ Blue: 25 (dice=[4], card=G4)
+    P2 @ Blue: 24 (dice=[4], card=R1)
+    P0 @ Yellow: 6 (dice=[6], card=G3)
+    P1 @ Yellow: 2 (dice=[2], card=Y7)
+    P2 @ Yellow: 4 (dice=[4], card=G1)
+
+  🏆 RING CLAIMS:
+    Orange → P0 (score: 2)
+    Blue → P0 (score: 2)
+    Yellow → P0 (score: 2)
+    🎉 SWEEP by P0! All 3 rings!
+  🎪 P1 drafts from Stunt Pool
+  🎪 P2 drafts from Stunt Pool
+
+============================================================
+  ROUND 2
+============================================================
+  🎭 SPECTATOR: 😱 The Jittery Hamster — Highest single die at Red Ring wins +1 FP
+  🎲 Dice rolled: [(0, [6, 6, 5, 4]), (1, [2, 5, 1, 5]), (2, [5, 3, 4, 4])]
+  🎯 Assignments: [(0, {'Orange': [6], 'Blue': [6], 'Yellow': [5]}), (1, {'Orange': [2], 'Blue': [5], 'Yellow': [1]}), (2, {'Orange': [5], 'Blue': [3], 'Yellow': [4]})]
+  🃏 Cards played (face-down): [(0, [P10, B8, P0]), (1, [G2, Y1]), (2, [B4])]
+  ✨ REVEAL! Cards flip:
+    P0 at Orange: P10
+    P0 at Blue: B8
+    P0 at Yellow: P0
+    P1 at Orange: G2
+    P1 at Blue: Y1
+    P2 at Orange: B4
+
+  📊 ENERGY SCORES:
+    P0 @ Orange: 4 (dice=[6], card=G2)
+    P1 @ Orange: 4 (dice=[2], card=P10)
+    P2 @ Orange: 3 (dice=[5], card=B4)
+    P0 @ Blue: 31 (dice=[6], card=B8)
+    P1 @ Blue: 7 (dice=[5], card=Y1)
+    P2 @ Blue: 3 (dice=[3], card=none)
+    P0 @ Yellow: 5 (dice=[5], card=P0)
+    P1 @ Yellow: 1 (dice=[1], card=none)
+    P2 @ Yellow: 4 (dice=[4], card=none)
+
+  🏆 RING CLAIMS:
+    Orange → P0 (score: 8)
+    Blue → P0 (score: 8)
+    Yellow → P0 (score: 8)
+    🎉 SWEEP by P0! All 3 rings!
+
+============================================================
+  ROUND 3
+============================================================
+  🎭 SPECTATOR: 🤝 The Peace Offering — All players reveal Stunt Doubles, those who do draw 1 card
+  → P0 reveals Stunt Double and draws 1 card!
+  → P1 reveals Stunt Double and draws 1 card!
+  🎲 Dice rolled: [(0, [2, 1, 2, 6]), (1, [5, 4, 4, 4]), (2, [4, 6, 5, 1])]
+  🎯 Assignments: [(0, {'Orange': [2], 'Blue': [1], 'Yellow': [2]}), (1, {'Orange': [5], 'Blue': [4], 'Yellow': [4]}), (2, {'Orange': [4], 'Blue': [6], 'Yellow': [5]})]
+  🃏 Cards played (face-down): [(0, [G10, Y8, O0]), (1, [P1]), (2, [])]
+  ✨ REVEAL! Cards flip:
+    P0 at Orange: G10
+    P0 at Blue: Y8
+    P0 at Yellow: O0
+    P1 at Orange: P1
+
+  📊 ENERGY SCORES:
+    P0 @ Orange: 5 (dice=[2], card=P1)
+    P1 @ Orange: 5 (dice=[5], card=G10)
+    P2 @ Orange: 3 (dice=[4], card=none)
+    P0 @ Blue: 26 (dice=[1], card=Y8)
+    P1 @ Blue: 5 (dice=[4], card=none)
+    P2 @ Blue: 6 (dice=[6], card=none)
+    P0 @ Yellow: 2 (dice=[2], card=O0)
+    P1 @ Yellow: 4 (dice=[4], card=none)
+    P2 @ Yellow: 5 (dice=[5], card=none)
+
+  🏆 RING CLAIMS:
+    Orange → P0 (score: 14)
+    Blue → P0 (score: 14)
+    Yellow → P2 (score: 0)
+
+  🏆🏆🏆 WINNER: P0 with 17 FP! 🏆🏆🏆
+
+============================================================
+FINAL SCORES:
+  P0: 17 FP
+  P1: 6 FP
+  P2: 1 FP
+
+🏆 CHAMPION: P0 with 17 FP!
