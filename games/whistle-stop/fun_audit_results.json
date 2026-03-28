@@ -1,0 +1,58 @@
+{
+  "by_player_count": {
+    "2": {
+      "avg_rounds": 10.0,
+      "mean_score": 64.749,
+      "win_rate_spread": 0.09600000000000003,
+      "comeback_rate": 0.2,
+      "station_placer_winrate": 0.864,
+      "avg_fun_rounds": 10.0,
+      "route_diversity": 2.798344852095584
+    },
+    "3": {
+      "avg_rounds": 7.0,
+      "mean_score": 52.322,
+      "win_rate_spread": 0.268,
+      "comeback_rate": 0.256,
+      "station_placer_winrate": 0.752,
+      "avg_fun_rounds": 7.0,
+      "route_diversity": 2.7211037139843985
+    },
+    "4": {
+      "avg_rounds": 5.0,
+      "mean_score": 42.7335,
+      "win_rate_spread": 0.14,
+      "comeback_rate": 0.352,
+      "station_placer_winrate": 0.856,
+      "avg_fun_rounds": 5.0,
+      "route_diversity": 2.6083904167365897
+    }
+  },
+  "grades": {
+    "pacing": {
+      "gpa": 3.9,
+      "grade": "A"
+    },
+    "mean_score": {
+      "gpa": 2.673183333333333,
+      "grade": "B-"
+    },
+    "balance": {
+      "gpa": 3.0,
+      "grade": "B+"
+    },
+    "comeback": {
+      "gpa": 4.0,
+      "grade": "A"
+    },
+    "fun_moments": {
+      "gpa": 4.0,
+      "grade": "A"
+    },
+    "blocking": {
+      "gpa": 3.0,
+      "grade": "B+"
+    },
+    "overall_gpa": 3.428863888888889
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "game_name": "Whistle Stop",
+  "version": "1.0",
+  "gameplay": {
+    "hand_size": 3,
+    "station_position": 15,
+    "route_cards_before_station": 14,
+    "station_bonus_vp": 10.0,
+    "route_length": 14,
+    "min_players": 2,
+    "max_players": 4
+  },
+  "factions": {
+    "red": {"bonus": 1},
+    "blue": {"bonus": 1},
+    "green": {"bonus": 1},
+    "yellow": {"bonus": 1}
+  },
+  "scoring": {
+    "passed_card_vp": 1,
+    "landed_card_vp": "rank",
+    "station_vp": 0,
+    "station_placement_bonus": 10,
+    "red_multiplier": 2.0,
+    "wild_10_multiplier": 2.0
+  },
+  "simulation": {
+    "batch_games": 250,
+    "player_counts": [2, 3, 4],
+    "seed": null
+  }
+}

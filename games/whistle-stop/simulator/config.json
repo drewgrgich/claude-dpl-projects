@@ -1,0 +1,78 @@
+{
+  "game_rules": {
+    "hand_size": 5,
+    "route_length_to_end": 15,
+    "station_placer_bonus": 5,
+    "station_vp": 0,
+    "red_scoring_multiplier": 2,
+    "ten_scoring_multiplier": 2,
+    "faction_bonus_steps": 1,
+    "max_turns": 50,
+    "factions": ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"],
+    "faction_colors": {
+      "RED": "Super-Dupes",
+      "ORANGE": "Finders-Keepers",
+      "YELLOW": "Tinkerers",
+      "GREEN": "Prognosticationers",
+      "BLUE": "Magicians",
+      "PURPLE": "Time Travelers"
+    },
+    "ranks": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "wild_ranks": [0, 10]
+  },
+  "scoring": {
+    "pass_through_vp": 1,
+    "landing_vp_equals_rank": true,
+    "red_doubles_all": true,
+    "ten_doubles_round": true
+  },
+  "faction_bonuses": {
+    "RED": {
+      "type": "directional",
+      "direction": "horizontal",
+      "steps": 1,
+      "description": "+1 horizontal step"
+    },
+    "ORANGE": {
+      "type": "conditional",
+      "condition": "end_on_rival_card",
+      "steps": 1,
+      "description": "+1 step if ending on another player's card"
+    },
+    "YELLOW": {
+      "type": "directional",
+      "direction": "any",
+      "steps": 1,
+      "description": "+1 step any direction"
+    },
+    "GREEN": {
+      "type": "directional",
+      "direction": "any",
+      "steps": 1,
+      "description": "+1 step any direction"
+    },
+    "BLUE": {
+      "type": "directional",
+      "direction": "vertical",
+      "steps": 1,
+      "description": "+1 vertical step"
+    },
+    "PURPLE": {
+      "type": "special",
+      "ability": "backward_movement",
+      "description": "May move backward along the route"
+    }
+  },
+  "player_counts": {
+    "2_player": {
+      "branching": true,
+      "description": "Route can branch with 2 players"
+    },
+    "3_player": {
+      "branching": false
+    },
+    "4_player": {
+      "branching": false
+    }
+  }
+}
