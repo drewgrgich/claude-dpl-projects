@@ -315,18 +315,18 @@ WIN:      First to 15 FP.
 ## v1.2 Changes (from v1.1)
 
 ### Change 1: FP Target Raised (15 → 25)
-The target to win has been raised from **15 FP to 25 FP**. This extends game length from ~5 rounds to ~8-10 rounds, making each round more meaningful and reducing the dominance of early Sweeps.
+The target to win has been raised from **15 FP to 25 FP**. This extends game length from ~6 rounds to ~10 rounds, making each round more meaningful. Games that previously ended by 15 FP now extend to 25 FP.
 
 ### Change 2: Spectator Every OTHER Round
-Spectator cards are now drawn only on **odd-numbered rounds** (1, 3, 5, ...). Even rounds proceed without Spectator interference. This prevents the game from feeling constantly chaotic and gives players more room to execute strategy.
+Spectator cards are now drawn only on **odd-numbered rounds** (1, 3, 5, ...). Even rounds proceed without Spectator interference. This halves spectator frequency.
 
 ### Change 3: Showman and Sprinter — Once Per Game
-**The Showman** (double FP this round) and **The Sprinter** (+2 to all dice) can now be used **once per game** instead of once per round. This preserves their power fantasy while preventing them from dominating every round.
+**The Showman** (double FP this round → now +3 FP bonus) and **The Sprinter** (+2 to all dice) can now be used **once per game** instead of once per round. This preserves their power fantasy while preventing per-round dominance.
 
 ### Why These Changes?
 These changes were informed by corpus analysis of Monster Mixer, Kahu, Bid Brawl, and Summit Scramble:
-- Kahu succeeded (GPA A) with 0% dead turns, 55% comeback rate, and 12.5-round games
-- Championship Arena v1.1 was too fast (5.1 rounds), too chaotic (98.5% spectator impact), and talents were too dominant (93.7%)
-- Raising FP target + taming spectators + limiting strong talents should push GPA from 2.21 toward 3.0+
+- Kahu succeeded (GPA A) with 0% dead turns, 55% comeback rate, and longer games
+- Championship Arena v1.1 was too fast (5.8 rounds), too chaotic (98% spectator impact), and talents were too dominant (94.7%)
+- Raising FP target + taming spectators + limiting strong talents pushed GPA from 2.21 to 2.36
 
-*Championship Arena v1.2 — Corpus-Informed Iteration*
+*Championship Arena v1.2 — Designer Corps (Morgan, Jordan, Casey), 2026-03-27*
