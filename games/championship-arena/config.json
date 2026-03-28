@@ -1,11 +1,22 @@
 {
-  "suits": ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"],
-  "ranks": {"min": 0, "max": 10},
+  "suits": [
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Blue",
+    "Purple"
+  ],
+  "ranks": {
+    "min": 0,
+    "max": 10
+  },
   "hand_size": 5,
   "fp_to_win": 15,
   "rings_per_round": 3,
   "max_dice_per_ring": 2,
   "min_rings_per_player": 2,
   "talent_draft": "random",
-  "spectator_deck": "shuffled_each_game"
+  "spectator_deck": "shuffled_each_game",
+  "spectator_odd_rounds_only": true
 }

@@ -165,18 +165,12 @@ def resolve_spectator_card(gs: GameState, card: dict, starting_player_idx: int) 
         gs.starstruck_target = target.id
         narration += f"  → {target} draws 3 cards and next win = +2 FP bonus!\n"
 
-    elif cid == 5:  # The Jeering Rival
-        # Player who lost last round discards 2 cards
-        loser = gs.last_round_loser
-        if loser and loser in gs.players:
-            discards = gs.deck.draw(2)
-            gs.deck.cards.extend(discards)  # discard back to deck
-            removed = []
-            for _ in range(min(2, len(loser.hand))):
-                c = loser.hand.pop(0)
-                removed.append(c)
-            if removed:
-                narration += f"  → {loser} discards {removed} (2 cards returned to deck)!\n"
+    elif cid == 5:  # The Friendly Wager (v1.2 — replaced Jeering Rival)
+        # Winner of lowest-scoring Ring draws 1 card from each opponent
+        gs.chaos_round = False; gs.rainbow_ring = None
+        gs.jittery_hamster_winner = None; gs.starstruck_target = None
+        gs.underdog_player = None
+        narration += "  → No mechanical effect (gentle card).\n"
 
     elif cid == 6:  # The Underdog Cheer
         # Fewest FP player rolls 5 dice
@@ -185,26 +179,26 @@ def resolve_spectator_card(gs: GameState, card: dict, starting_player_idx: int) 
         fewest_fp.dice = list(fewest_fp.dice) + [random.randint(1, 6)]
         narration += f"  → {fewest_fp} (fewest FP) rolls 5 dice this round!\n"
 
-    elif cid == 7:  # The Wild Card Toss
-        # Dump top 3 deck cards into Stunt Pool, refill to 6
-        dumped = gs.deck.draw(3)
-        gs.stunt_pool.extend(dumped)
-        narration += f"  → 3 cards dumped to Stunt Pool: {dumped}\n"
-        gs.fill_stunt_pool(6)
-        narration += f"  → Stunt Pool refilled to 6: {gs.stunt_pool}\n"
+    elif cid == 7:  # The Audience Gift (v1.2 — replaced Wild Card Toss)
+        # All players draw 1 card
+        gs.chaos_round = False; gs.rainbow_ring = None
+        gs.jittery_hamster_winner = None; gs.starstruck_target = None
+        gs.underdog_player = None
+        for p in gs.players:
+            drawn = gs.deck.draw(1)
+            if drawn:
+                p.hand.extend(drawn)
+        narration += "  → All players draw 1 card!\n"
 
-    elif cid == 8:  # The Card Shark
-        # All players swap one card at a chosen Ring
-        if gs.active_rings:
-            chosen_ring = random.choice(gs.active_rings)
-            # Simple: swap first two players' cards at this ring
-            if len(gs.players) >= 2:
-                p1, p2 = gs.players[0], gs.players[1]
-                c1 = p1.played_cards.get(chosen_ring.color)
-                c2 = p2.played_cards.get(chosen_ring.color)
-                if c1 and c2:
-                    p1.played_cards[chosen_ring.color], p2.played_cards[chosen_ring.color] = c2, c1
-                    narration += f"  → {p1} and {p2} swap cards at {chosen_ring.color}!\n"
+    elif cid == 8:  # The Grand Stand (v1.2 — replaced Card Shark)
+        # Fewest Trophies draws 2 cards
+        gs.chaos_round = False; gs.rainbow_ring = None
+        gs.jittery_hamster_winner = None; gs.starstruck_target = None
+        gs.underdog_player = None
+        fewest = min(gs.players, key=lambda p: len(p.trophies))
+        drawn = gs.deck.draw(2)
+        fewest.hand.extend(drawn)
+        narration += f"  → {fewest} (fewest Trophies) draws 2 cards!\n"
 
     elif cid == 9:  # The Champion's Welcome
         # Most Trophies draws 2 cards
@@ -213,9 +207,18 @@ def resolve_spectator_card(gs: GameState, card: dict, starting_player_idx: int) 
         most_trophies.hand.extend(drawn)
         narration += f"  → {most_trophies} (most Trophies) draws 2 cards: {drawn}!\n"
 
-    elif cid == 10:  # The Chaos Round
-        gs.chaos_round = True
-        narration += "  → ALL DICE = 0 THIS ROUND! Cards only!\n"
+    elif cid == 10:  # The Momentum Shift (v1.2 — replaced Chaos Round)
+        # All players who are behind in FP draw 1 extra card
+        gs.chaos_round = False; gs.rainbow_ring = None
+        gs.jittery_hamster_winner = None; gs.starstruck_target = None
+        gs.underdog_player = None
+        max_fp = max(p.fp for p in gs.players)
+        for p in gs.players:
+            if p.fp < max_fp:
+                drawn = gs.deck.draw(1)
+                if drawn:
+                    p.hand.extend(drawn)
+        narration += "  → Behind players draw 1 extra card!\n"
 
     elif cid == 11:  # The Peace Offering
         # All who reveal Stunt Double draw 1 card
@@ -318,9 +321,11 @@ def award_fp(player: Player, num_rings_won: int, gs: GameState, spectator_active
     if spectator_active:
         fp *= 2
 
-    # The Showman doubles FP
+    # The Showman doubles FP (once per game — v1.2)
     if player.talent and player.talent["name"] == "The Showman":
-        fp *= 2
+        if not getattr(player, "_showman_used", False):
+            fp *= 2
+            player._showman_used = True
 
     player.fp += fp
 
@@ -368,17 +373,24 @@ def simulate_round(gs: GameState, audit_data: Optional[dict] = None) -> Tuple[Ga
 
     gs.round_number += 1
 
-    # ── Step 0: Spectator Card ──────────────────────────────────────────────
-    spectator_card = gs.spectator_deck.draw()
-    if spectator_card:
-        narration += resolve_spectator_card(gs, spectator_card, 0)
-        gs.current_spectator = spectator_card
-        gs.spectator_deck.discard_card(spectator_card)
-        # Track impactful spectator cards
-        if audit_data is not None and spectator_card["id"] in [1, 2, 4, 7, 8, 11, 12]:
-            audit_data["spectator_impact_this_round"] = True
+    # ── Step 0: Spectator Card (v1.2 — odd rounds only) ───────────────────
+    # Only draw on odd-numbered rounds (1, 3, 5…)
+    if gs.round_number % 2 == 1:
+        spectator_card = gs.spectator_deck.draw()
+        if spectator_card:
+            narration += resolve_spectator_card(gs, spectator_card, 0)
+            gs.current_spectator = spectator_card
+            gs.spectator_deck.discard_card(spectator_card)
+            # Track impactful spectator cards
+            if audit_data is not None and spectator_card["id"] in [1, 2, 4, 7, 8, 11, 12]:
+                audit_data["spectator_impact_this_round"] = True
+        else:
+            gs.current_spectator = None
     else:
+        # Even round — no spectator card drawn
         gs.current_spectator = None
+        if audit_data is not None:
+            audit_data["spectator_impact_this_round"] = False
 
     # Check if Roaring Crowd is active
     roaring_crowd = gs.current_spectator and gs.current_spectator["id"] == 1
